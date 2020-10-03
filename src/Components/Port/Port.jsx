@@ -52,7 +52,7 @@ class Port extends Component {
                             () => console.log(this.state))}/>
                         </InputLabel>
                         <SwitchButton type="checkbox" checkedIcon={false} uncheckedIcon={false}
-                        checked={this.state.A1, this.state.A2, this.state.A}
+                        checked={this.state.A}
                         onChange={() => this.setState({A1: !this.state.A1, A2: !this.state.A2, A: !this.state.A}, 
                         () => console.log(this.state))}/>
                     </ButtonBackground>
@@ -72,7 +72,7 @@ class Port extends Component {
                             () => console.log(this.state))}/>
                         </InputLabel>
                         <SwitchButton type="checkbox" checkedIcon={false} uncheckedIcon={false}
-                        checked={this.state.B1, this.state.B2, this.state.B}
+                        checked={this.state.B}
                         onChange={() => this.setState({B1: !this.state.B1, B2: !this.state.B2, B: !this.state.B}, 
                         () => console.log(this.state))}/>
                     </ButtonBackground>
@@ -99,7 +99,7 @@ class Port extends Component {
                             () => console.log(this.state))}/>
                         </InputLabel>
                         <SwitchButton type="checkbox" checkedIcon={false} uncheckedIcon={false}
-                        checked={this.state.C1, this.state.C2, this.state.C}
+                        checked={this.state.C}
                         onChange={() => this.setState({C1: !this.state.C1, C2: !this.state.C2, C: !this.state.C},
                          () => console.log(this.state))}/>
                     </ButtonBackground>
@@ -119,7 +119,7 @@ class Port extends Component {
                             () => console.log(this.state))}/>
                         </InputLabel>
                         <SwitchButton type="checkbox" checkedIcon={false} uncheckedIcon={false}
-                        checked={this.state.D1,this.state.D2, this.state.D}
+                        checked={this.state.D}
                         onChange={() => this.setState({D1: !this.state.D1, D2: !this.state.D2, D: !this.state.D}, 
                         () => console.log(this.state))}/>
                     </ButtonBackground>
