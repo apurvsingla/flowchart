@@ -19,7 +19,7 @@ export const HeaderContainer = styled.div`
         transform: scale(0.6);
     }  
     @media (max-width: 438px){
-        transform: scale(0.5);
+        transform: scale(0.53);
     }  
     @media (max-width: 368px){
         transform: scale(0.45);

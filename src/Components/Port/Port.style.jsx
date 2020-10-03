@@ -8,12 +8,12 @@ export const MainContainer = styled.div`
     @media (max-width: 624px) {
         transform: scale(0.7);
     }
-    @media (max-width: 400px){
-        transform: scale(0.6);
+    @media (max-width: 420px){
+        transform: scale(0.65);
     }
-    @media (max-width: 368px){
-        transform: scale(0.5);
-    }  
+    @media (max-width: 388px){
+        transform: scale(0.55);
+    }   
 `;
 
 export const ButtonBackground = styled.div`
@@ -64,8 +64,8 @@ export const BottomContainer = styled.div`
     width: 75%;
     margin-left: 12.5%;
     @media (max-width: 450px){
-        width: 100%;
-        margin: 0;
+        width: 90%;
+        margin-left: 0.5%;
     }   
 `;
 
