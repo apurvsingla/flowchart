@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 export const HeaderContainer = styled.div`
     display: flex;
@@ -15,16 +15,15 @@ export const HeaderOptions = styled.div`
 `;
 
 
-export const HeaderLinksContainer = styled(Link)`
+export const HeaderLinksContainer = styled(NavLink)`
     margin-right: 4px;
     border: 1px solid blue;
     border-radius: 15px;
     text-decoration: none;
     border-top: none;
     padding: 22px;
-    text-align: center;
     position: relative;
-    top: -18px
+    top: -18px;
 `;
 
 export const HeaderWifiImage = styled.img`
