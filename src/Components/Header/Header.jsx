@@ -1,14 +1,19 @@
 import React from 'react';
-import {HeaderContainer, HeaderOptions, HeaderLinksContainer, HeaderWifiImage} from './Header.style';
+import {HeaderContainer,
+    HeaderOptions, 
+    HeaderLinksContainer,
+     HeaderWifiImage,
+      HeaderBackButton, 
+      HeaderHelp} from './Header.style';
 import {withRouter} from 'react-router-dom';
 import './Header.scss';
 
 const Header = (props) => {
-    const isActive = props.location.pathname;
     return (
         <HeaderContainer>
             <HeaderOptions>
-                <HeaderLinksContainer to="/" activeClassName='is-active' exact >
+            <HeaderBackButton src={process.env.PUBLIC_URL + '/images/login/login_button_back.png'} alt="back" width="90"/>
+                <HeaderLinksContainer to="/" activeClassName='is-active' exact>
                     Select ports
                 </HeaderLinksContainer>
                 <HeaderLinksContainer to="/input-output" activeClassName='is-active'>
@@ -21,6 +26,7 @@ const Header = (props) => {
                 FlowChart
                 </HeaderLinksContainer>
                 <HeaderWifiImage src={process.env.PUBLIC_URL + '/images/header/login_bluetooth_icon.png'}  alt="logo"/>
+                <HeaderHelp src={process.env.PUBLIC_URL + '/images/login/button_help.png'} alt="back" width="90"/>
             </HeaderOptions>
         </HeaderContainer>
     );

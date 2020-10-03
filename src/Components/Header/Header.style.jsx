@@ -1,37 +1,60 @@
 import styled from 'styled-components';
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 export const HeaderContainer = styled.div`
-    display: flex;
-    justify-content: center;
+    text-align:center;
     margin-bottom: 70px;
-    padding: 15px;
-    box-sizing: border-box;
+    padding: 12px;
+    @media (max-width: 768px) {
+        padding: 5px;
+    }
 `;
 
 export const HeaderOptions = styled.div`
-    display: block;
-    box-sizing: border-box;
+   display: flex;
+   justify-content: center;
 `;
 
 
 export const HeaderLinksContainer = styled(NavLink)`
     margin-right: 4px;
-    border: 1px solid blue;
+    border: 1px solid #311b92;
     border-radius: 15px;
     text-decoration: none;
-    border-top: none;
-    padding: 22px;
+    padding: 45px 28px 20px 28px;
     position: relative;
-    top: -18px;
+    top: -48px;
 `;
 
 export const HeaderWifiImage = styled.img`
-    width: 30px;
-    margin-left: 20px;
+    width: 4rem;
+    position: relative;
+    top: -45px;
+    border: 1px solid #311b92;
+    padding: 7px;
+    border-radius: 50px;
     &:hover {
         opacity: 0.8;
         cursor: pointer;
       }
+    @media (max-width: 768px) {
+        width: 70px;
+    }
+`;
+
+export const HeaderBackButton = styled.img`
+    display: inline-block;
+    &:hover {
+        opacity: 0.8;
+        cursor: pointer;
+    }
+`;
+
+export const HeaderHelp = styled.img`
+    display: inline-block;
+    &:hover {
+        opacity: 0.8;
+        cursor: pointer;
+    }
 `;
 

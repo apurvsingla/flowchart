@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-
+import Switch from "react-switch";
 export const MainContainer = styled.div`
     display: flex;
     justify-content: center;
@@ -7,11 +7,12 @@ export const MainContainer = styled.div`
 `;
 
 export const ButtonBackground = styled.div`
-    background-image: url(${process.env.PUBLIC_URL + '/images/login/panel_bg.png'});
-    background-size: contain;
-    background-repeat: no-repeat;
-    padding: 15px;
-    margin: 15px;
+    border: 2px solid #311b92;
+    padding: 10px;
+    margin: 12px;
+    border-radius: 35px;
+    display: flex;
+    justify-content: center;
 `;
 
 export const ButtonDiv = styled.div`
@@ -21,27 +22,28 @@ export const ButtonDiv = styled.div`
 export const InputLabel = styled.label`
     padding-bottom: 5px;
     padding-left: 5px;
+    padding-right: 5px;
 `;
 
 export const InputCheckBox = styled.input`
-    margin-right: 14px;
-    margin-left: 7px;
+    margin-left: 8px;
     appearance: none;
-    display: inline-block;
-    width: 30px;
-    height: 30px;
-    padding: 6px;
-
-    background-clip: content-box;
+    width: 25px;
+    height: 25px;
     border-radius: 25px;
     background-color: #e7e6e7;   
-
+    position: relative;
+    top: 7px;
     &:checked{
-        background-color: lightgreen;
+        background-color: green;
     }
 
     &:focus{
         outline: none !important;
+    }
+    @media (max-width: 768px) {
+        padding: 0;
+        margin: 0;
     }
 `;
 
@@ -51,13 +53,12 @@ export const BottomContainer = styled.div`
     border: 1px solid blue;
     border-radius: 15px;
     padding: 15px;
-    position: absolute;
-    top: 84%;
 `;
 
 
-// export const CartDropdownButton = styled(CustomButton)`
-//   margin-top: auto;
-// `;
+export const SwitchButton = styled(Switch)`
+    position: relative;;
+    top: 5px;
+`;
 
 
