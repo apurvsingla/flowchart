@@ -63,6 +63,10 @@ export const BottomContainer = styled.div`
     padding: 15px;
     width: 75%;
     margin-left: 12.5%;
+    @media (max-width: 450px){
+        width: 100%;
+        margin: 0;
+    }   
 `;
 
 
