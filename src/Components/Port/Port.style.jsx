@@ -4,6 +4,16 @@ export const MainContainer = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    box-sizing: border-box;
+    @media (max-width: 624px) {
+        transform: scale(0.7);
+    }
+    @media (max-width: 400px){
+        transform: scale(0.6);
+    }
+    @media (max-width: 368px){
+        transform: scale(0.5);
+    }  
 `;
 
 export const ButtonBackground = styled.div`
@@ -48,11 +58,11 @@ export const InputCheckBox = styled.input`
 `;
 
 export const BottomContainer = styled.div`
-    margin-left: 25%;
-    width: 50%;
     border: 1px solid blue;
     border-radius: 15px;
     padding: 15px;
+    width: 75%;
+    margin-left: 12.5%;
 `;
 
 
