@@ -4,9 +4,11 @@ import {
   Route,
   // Redirect
 } from 'react-router-dom';
-import Input from './Pages/InputOutput/Input';
 
+import Input from './Pages/InputOutput/Input';
 import Ports from './Pages/Ports/Port';
+import Digital from './Pages/Digital/Digital';
+
 import Header from './Components/Header/Header';
 import './App.css';
 class App extends Component {
@@ -17,6 +19,8 @@ class App extends Component {
         <Switch>
           <Route exact path="/" component={Ports} />
           <Route exact path="/input-output" component={Input} />
+          <Route exact path="/input-output" component={Input} />
+          <Route exact path="/digital-analog" component={Digital} />
         </Switch>
       </div>
     );
