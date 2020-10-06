@@ -14,6 +14,7 @@ export default function SwitchButton(props) {
         disabled={props.disabled}
         checked={props.checked}
         onChange={props.onChange}
-        className="ls"/>
+        className="ls"
+        />
     )
 }

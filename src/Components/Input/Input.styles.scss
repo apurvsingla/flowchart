@@ -84,6 +84,16 @@
     width: 90px;
 }
 
+.lower-label-input{
+    position: relative;
+    right: 2px;
+}
+
+.upper-label-input>span{
+    position: relative;
+    right: 1px;
+}
+
 
 .I2c{
     display: flex;
@@ -195,10 +205,21 @@
     }
 } 
 
+@media (max-width: 623px) {    
+    .right {
+        padding-top: 3.5rem;
+        padding-bottom: 3.45rem;
+    }
+} 
+
 
 @media (max-width: 560px) {
     .left, .right{
         transform: scale(0.96);
+    }
+    .right {
+        padding-top: 1rem;
+        padding-bottom: 0.9rem;
     }
     .flex{
         width: 100%;
@@ -208,17 +229,13 @@
 
 @media (max-width: 412px) {
     .right {
-        padding-top:15px;
-        padding-bottom: 13px;
+        padding-top: 3.5rem;
+        padding-bottom: 3.45rem;
     }
 }
 
 
 @media (max-width: 389px) {
-    .right {
-        padding-top:21%;
-        padding-bottom: 20.1%;
-    }
     .sp{
         top: 140px;
     }

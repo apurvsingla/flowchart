@@ -1,0 +1,23 @@
+.pwm {
+    margin-right: 5px;
+    margin-left: 10px;
+}
+
+.pwm, .dac{
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    position: relative;
+    bottom: 3px;
+    left: 5px;
+}
+
+.lower-digital{
+    position: relative;
+    right: 2px;
+}
+
+.upper-digital>label{
+    position: relative;
+    right: 1px;
+}

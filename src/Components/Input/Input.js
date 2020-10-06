@@ -3,7 +3,6 @@ import {MainInputComponent} from './Input.styles';
 import SwitchButton from '../SwitchButton/SwitchButton';
 import BottomContainer from '../BottomContainer/BottomContainer';
 import PopupMenu from '../Popup/Popup.jsx';
-// import Popup from 'reactjs-popup';
 import './Input.styles.scss';
 
 
@@ -111,6 +110,47 @@ class InputOutput extends Component {
         localStorage.setItem('i2c', !this.state.i2c)
     }
 
+    a1CheckedState = () => {
+        this.setState({A1Checked: !this.state.A1Checked})
+        localStorage.setItem("a1-I/O", this.state.A1Checked);
+    }
+
+    a2CheckedState = () => {
+        this.setState({A2Checked: !this.state.A2Checked})
+        localStorage.setItem("a2-I/O", this.state.A2Checked);
+    }
+
+    b1CheckedState = () => {
+        this.setState({B1Checked: !this.state.B1Checked})
+        localStorage.setItem("b1-I/O", this.state.B1Checked);
+    }
+
+    b2CheckedState = () => {
+        this.setState({B2Checked: !this.state.B2Checked})
+        localStorage.setItem("b2-I/O", this.state.B2Checked);
+    }
+
+    c1CheckedState = () => {
+        this.setState({C1Checked: !this.state.C1Checked})
+        localStorage.setItem("c1-I/O", this.state.C1Checked);
+    }
+
+    c2CheckedState = () => {
+        this.setState({C2Checked: !this.state.C2Checked})
+        localStorage.setItem("c2-I/O", this.state.C2Checked);
+    }
+
+    d1CheckedState = () => {
+        this.setState({D1Checked: !this.state.D1Checked})
+        localStorage.setItem("d1-I/O", this.state.D1Checked);
+    }
+
+    d2CheckedState = () => {
+        this.setState({D2Checked: !this.state.D2Checked})
+        localStorage.setItem("d2-I/O", this.state.D2Checked);
+    }
+    
+
     render() {
         let buttonModal;
         let buttonModalSp1;
@@ -157,20 +197,21 @@ class InputOutput extends Component {
                     </div>
                 </label>  
             </div>
-            <label>
-            B1
+            <label className="upper-label-input">
+                                <span>
+                                B1</span>
             <SwitchButton 
-            checked={this.state.B1Checked}
             disabled={!this.state.B1}
-            onChange={() => !this.state.B1Checked}
+            checked={JSON.parse(localStorage.getItem('b1-I/O'))}
+            onChange={this.b1CheckedState}
             />
             </label>
-            <label>
+            <label className="lower-label-input">
                 B2
                 <SwitchButton 
-                checked={this.state.B2Checked}
                 disabled={!this.state.B2}
-                onChange={() => !this.state.A1Checked}
+                checked={JSON.parse(localStorage.getItem('b2-I/O'))}
+                onChange={this.b2CheckedState}
                 />
             </label>
         </div>)}
@@ -242,20 +283,21 @@ class InputOutput extends Component {
                         {this.state.showPopupSp1 ? buttonModalSp1 : null}
         </div>
         <div className="right-upper">
-            <label>
-                C1
+            <label className="upper-label-input">
+                                <span>
+                                C1</span>
                 <SwitchButton 
-                checked={this.state.C1Checked}
                 disabled={!this.state.C1}
-                onChange={() => !this.state.A1Checked}
+                checked={JSON.parse(localStorage.getItem('c1-I/O'))}
+                onChange={this.c1CheckedState}
                 />
             </label>
-            <label>
+            <label className="lower-label-input">
                 C2
                 <SwitchButton 
-                checked={this.state.C2Checked}
                 disabled={!this.state.C2}
-                onChange={() => !this.state.A1Checked}
+                checked={JSON.parse(localStorage.getItem('c2-I/O'))}
+                onChange={this.c2CheckedState}
                 />
             </label>
         </div>
@@ -273,20 +315,21 @@ class InputOutput extends Component {
                     {this.state.showPopupI2c ? buttonModalI2c : null}
                 </label> 
             </div>
-            <label>
-                D1
+            <label className="upper-label-input">
+                                <span>
+                                A1</span>
                 <SwitchButton
-                checked={this.state.D1Checked}
                 disabled={!this.state.D1}
-                onChange={() => !this.state.A1Checked}
+                checked={JSON.parse(localStorage.getItem('d1-I/O'))}
+                onChange={this.d1CheckedState}
                 />
             </label>
-            <label>
+            <label className="lower-label-input">
                 D2
                 <SwitchButton
-                checked={this.state.D2Checked}
                 disabled={!this.state.D2}
-                onChange={() => !this.state.A1Checked}
+                checked={JSON.parse(localStorage.getItem('d2-I/O'))}
+                onChange={this.d2CheckedState}
                 />
             </label>
             </div>
@@ -301,19 +344,20 @@ class InputOutput extends Component {
                 <div className="flex">
                     <div className="left">
                         <div className="left-upper">
-                            <label>
-                                A1
+                            <label className="upper-label-input">
+                                <span>
+                                A1</span>
                                 <SwitchButton  
                                 disabled={!this.state.A1}
-                                checked={this.state.A1Checked}
-                                onChange={() => !this.state.A1Checked}/>
+                                checked={JSON.parse(localStorage.getItem('a1-I/O'))}
+                                onChange={this.a1CheckedState}/>
                             </label>
-                            <label>
+                            <label className="lower-label-input">
                                 A2
                                 <SwitchButton
                                 checked={this.state.A2Checked}
-                                disabled={!this.state.A2}
-                                onChange={() => !this.state.A2Checked}
+                                checked={JSON.parse(localStorage.getItem('a2-I/O'))}
+                                onChange={this.a2CheckedState}
                                 />
                             </label>
                         </div>
