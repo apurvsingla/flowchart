@@ -284,6 +284,7 @@ class InputOutput extends Component {
                     </div>
                 </div>
             </MainInputComponent>
+            <br/>
             <BottomContainer />
             </div>
         );

@@ -6,6 +6,10 @@ export const Container = styled.div`
     padding: 15px;
     width: 70%;
     margin-left: 15%;
+    @media (max-width: 724px) {
+            margin-top: 5px;
+        
+    }
     @media (max-width: 320px){
         width: 90%;
         margin-left: 3%;
