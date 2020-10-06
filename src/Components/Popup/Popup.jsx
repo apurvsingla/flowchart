@@ -8,10 +8,10 @@ const PopupMenu = ({open, close, children, click, onActivation, onDeactivation})
                 closeOnDocumentClick={false} 
                 onClose={close}>
                     <div className="modal">
-                    <a className="close" 
+                    <span className="close" 
                         onClick={click}>
                         &times;
-                    </a>
+                    </span>
                     <br/>
                     <span className="popChildren"> {children} </span>
                     <br/>
