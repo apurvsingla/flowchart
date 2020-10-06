@@ -51,7 +51,8 @@ export const HeaderLinksContainer = styled(NavLink)`
 `;
 
 export const HeaderWifiImage = styled.img`
-    width: 4rem;
+    width: 2.5rem;
+    margin-left: 2px;
     position: relative;
     top: -45px;
     border: 1px solid #311b92;

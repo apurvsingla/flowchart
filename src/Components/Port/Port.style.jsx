@@ -71,8 +71,8 @@ export const BottomContainer = styled.div`
 
 
 export const SwitchButton = styled(Switch)`
-    position: relative;;
-    top: 5px;
+    position: relative;
+    top: 8px;
 `;
 
 

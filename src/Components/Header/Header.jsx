@@ -25,7 +25,7 @@ const Header = (props) => {
                 <HeaderLinksContainer to="/flowchart" activeClassName='is-active'>
                 FlowChart
                 </HeaderLinksContainer>
-                <HeaderWifiImage src={process.env.PUBLIC_URL + '/images/header/login_bluetooth_icon.png'}  alt="logo"/>
+                <HeaderWifiImage src={process.env.PUBLIC_URL + '/images/header/bluetooth_inactive.png'}  alt="logo"/>
                 <HeaderHelp src={process.env.PUBLIC_URL + '/images/login/button_help.png'} alt="back" width="90"/>
             </HeaderOptions>
         </HeaderContainer>

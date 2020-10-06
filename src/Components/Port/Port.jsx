@@ -3,10 +3,10 @@ import {MainContainer,
 ButtonBackground, 
 ButtonDiv,
 InputCheckBox,
-BottomContainer,
 InputLabel,
 SwitchButton
 } from './Port.style';
+import BottomContainer from '../BottomContainer/BottomContainer';
 // import { connect } from 'react-redux';
 // import { createStructuredSelector } from 'reselect';
 // import { withRouter } from 'react-router-dom';
@@ -42,19 +42,23 @@ class Port extends Component {
                             <InputCheckBox type="checkbox" 
                             checked={this.state.A1}
                             onChange={() => this.setState({A1: !this.state.A1}, 
-                            () => console.log(this.state))}/>
+                               () => localStorage.setItem('A1', this.state.A1))}/>
                         </InputLabel>
                         <InputLabel>
                             A2
                             <InputCheckBox type="checkbox" 
                             checked={this.state.A2}
                             onChange={() => this.setState({A2: !this.state.A2}, 
-                            () => console.log(this.state))}/>
+                                () => localStorage.setItem('A2', this.state.A2))}/>
                         </InputLabel>
-                        <SwitchButton type="checkbox" checkedIcon={false} uncheckedIcon={false}
+                        <SwitchButton type="checkbox" 
+                        checkedIcon={false} 
+                        uncheckedIcon={false}
                         checked={this.state.A}
                         onChange={() => this.setState({A1: !this.state.A1, A2: !this.state.A2, A: !this.state.A}, 
-                        () => console.log(this.state))}/>
+                            () => localStorage.setItem('A2', this.state.A2) , localStorage.setItem('A1', !this.state.A1))}
+                        height={20}
+                        handleDiameter={18}/>
                     </ButtonBackground>
                     <ButtonBackground>
                         <InputLabel>
@@ -62,46 +66,50 @@ class Port extends Component {
                             <InputCheckBox type="checkbox" 
                             checked={this.state.B1}
                             onChange={() => this.setState({B1: !this.state.B1}, 
-                            () => console.log(this.state))}/>
+                                () => localStorage.setItem('B1', this.state.B1))}/>
                         </InputLabel>
                         <InputLabel>
                             B2
                             <InputCheckBox type="checkbox" 
                             checked={this.state.B2}
                             onChange={() => this.setState({B2: !this.state.B2}, 
-                            () => console.log(this.state))}/>
+                                () => localStorage.setItem('B2', this.state.B2))}/>
                         </InputLabel>
                         <SwitchButton type="checkbox" checkedIcon={false} uncheckedIcon={false}
                         checked={this.state.B}
                         onChange={() => this.setState({B1: !this.state.B1, B2: !this.state.B2, B: !this.state.B}, 
-                        () => console.log(this.state))}/>
+                            () => localStorage.setItem('B2', this.state.B2), localStorage.setItem('B1', !this.state.B1))}
+                            height={20}
+                            handleDiameter={18}/>
                     </ButtonBackground>
                 </ButtonDiv>
 
-                <div className='center'>
+                <div className='center-image'>
                     <img src={process.env.PUBLIC_URL + '/images/login/illus_ace.png'}  alt="logo" width="280"/>
                 </div>
 
-                <div className='right'>
+                <div className='right-main'>
                     <ButtonBackground>
                         <InputLabel>
                             C1
                             <InputCheckBox type="checkbox" 
                             checked={this.state.C1}
                             onChange={() => this.setState({C1: !this.state.C1}, 
-                            () => console.log(this.state))}/>
+                                () => localStorage.setItem('C1', this.state.C1))}/>
                         </InputLabel>
                         <InputLabel>
                             C2
                             <InputCheckBox type="checkbox" 
                             checked={this.state.C2}
                             onChange={() => this.setState({C2: !this.state.C2}, 
-                            () => console.log(this.state))}/>
+                            () => localStorage.setItem('C2', this.state.C2))}/>
                         </InputLabel>
                         <SwitchButton type="checkbox" checkedIcon={false} uncheckedIcon={false}
                         checked={this.state.C}
                         onChange={() => this.setState({C1: !this.state.C1, C2: !this.state.C2, C: !this.state.C},
-                         () => console.log(this.state))}/>
+                            () => localStorage.setItem('C2', this.state.C2), localStorage.setItem('C1', !this.state.C1))}
+                            height={20}
+                            handleDiameter={18}/>
                     </ButtonBackground>
                     <ButtonBackground>
                         <InputLabel>
@@ -109,29 +117,27 @@ class Port extends Component {
                             <InputCheckBox type="checkbox" 
                             checked={this.state.D1}
                             onChange={() => this.setState({D1: !this.state.D1}, 
-                            () => console.log(this.state))}/>
+                            () => localStorage.setItem('D1', this.state.D1))}/>
                         </InputLabel>
                         <InputLabel>
                             D2
                             <InputCheckBox type="checkbox" 
                             checked={this.state.D2}
                             onChange={() => this.setState({D2: !this.state.D2}, 
-                            () => console.log(this.state))}/>
+                            () => localStorage.setItem('D2', this.state.D2))}/>
                         </InputLabel>
                         <SwitchButton type="checkbox" checkedIcon={false} uncheckedIcon={false}
                         checked={this.state.D}
                         onChange={() => this.setState({D1: !this.state.D1, D2: !this.state.D2, D: !this.state.D}, 
-                        () => console.log(this.state))}/>
+                        () => localStorage.setItem('D2', this.state.D), localStorage.setItem('D1', !this.state.D1))}
+                        height={20}
+                        handleDiameter={18}/>
                     </ButtonBackground>
                 </div>
                 
             </MainContainer>
             <br/>
-            <BottomContainer>
-                <p>Description line 1</p>
-                <br/>
-                <p>Description line 2</p>
-            </BottomContainer>
+            <BottomContainer />
             </div>
             
         );

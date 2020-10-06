@@ -4,6 +4,7 @@ import {
   Route,
   // Redirect
 } from 'react-router-dom';
+import Input from './Pages/InputOutput/Input';
 
 import Ports from './Pages/Ports/Port';
 import Header from './Components/Header/Header';
@@ -15,6 +16,7 @@ class App extends Component {
       <Header />
         <Switch>
           <Route exact path="/" component={Ports} />
+          <Route exact path="/input-output" component={Input} />
         </Switch>
       </div>
     );
