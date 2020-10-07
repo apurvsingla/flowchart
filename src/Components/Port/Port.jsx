@@ -96,19 +96,19 @@ class Port extends Component {
                         <InputLabel>
                             A1
                             <InputCheckBox type="checkbox" 
-                            checked={JSON.parse(localStorage.getItem('A1'))}
+                            checked={JSON.parse(localStorage.getItem('A1')) || false}
                             onChange={() => this.onA1ValueChange()}/>
                         </InputLabel>
                         <InputLabel>
                             A2
                             <InputCheckBox type="checkbox" 
-                            checked={JSON.parse(localStorage.getItem('A2'))}
+                            checked={JSON.parse(localStorage.getItem('A2')) || false}
                             onChange={() => this.onA2ValueChange()}/>
                         </InputLabel>
                         <SwitchButton type="checkbox" 
                         checkedIcon={false} 
                         uncheckedIcon={false}
-                        checked={JSON.parse(localStorage.getItem('A'))}
+                        checked={JSON.parse(localStorage.getItem('A')) || false}
                         onChange={() => this.onAValueChange()}
                         height={20}
                         handleDiameter={18}/>
@@ -117,17 +117,17 @@ class Port extends Component {
                         <InputLabel>
                             B1
                             <InputCheckBox type="checkbox" 
-                            checked={JSON.parse(localStorage.getItem('B1'))}
+                            checked={JSON.parse(localStorage.getItem('B1')) || false}
                             onChange={() => this.onB1ValueChange()}/>
                         </InputLabel>
                         <InputLabel>
                             B2
                             <InputCheckBox type="checkbox" 
-                            checked={JSON.parse(localStorage.getItem('B2'))}
+                            checked={JSON.parse(localStorage.getItem('B2')) || false}
                             onChange={() => this.onB2ValueChange()}/>
                         </InputLabel>
                         <SwitchButton type="checkbox" checkedIcon={false} uncheckedIcon={false}
-                        checked={JSON.parse(localStorage.getItem('B'))}
+                        checked={JSON.parse(localStorage.getItem('B')) || false}
                         onChange={() => this.onBValueChange()}
                             height={20}
                             handleDiameter={18}/>
@@ -143,17 +143,17 @@ class Port extends Component {
                         <InputLabel>
                             C1
                             <InputCheckBox type="checkbox" 
-                            checked={JSON.parse(localStorage.getItem('C1'))}
+                            checked={JSON.parse(localStorage.getItem('C1')) || false}
                             onChange={() => this.onC1ValueChange()}/>
                         </InputLabel>
                         <InputLabel>
                             C2
                             <InputCheckBox type="checkbox" 
-                            checked={JSON.parse(localStorage.getItem('C2'))}
+                            checked={JSON.parse(localStorage.getItem('C2')) || false}
                             onChange={() => this.onC2ValueChange()}/>
                         </InputLabel>
                         <SwitchButton type="checkbox" checkedIcon={false} uncheckedIcon={false}
-                        checked={JSON.parse(localStorage.getItem('C'))}
+                        checked={JSON.parse(localStorage.getItem('C')) || false}
                         onChange={() => this.onCValueChange()}
                             height={20}
                             handleDiameter={18}/>
@@ -162,17 +162,17 @@ class Port extends Component {
                         <InputLabel>
                             D1
                             <InputCheckBox type="checkbox" 
-                            checked={JSON.parse(localStorage.getItem('D1'))}
+                            checked={JSON.parse(localStorage.getItem('D1')) || false}
                             onChange={() => this.onD1ValueChange()}/>
                         </InputLabel>
                         <InputLabel>
                             D2
                             <InputCheckBox type="checkbox" 
-                            checked={JSON.parse(localStorage.getItem('D2'))}
+                            checked={JSON.parse(localStorage.getItem('D2')) || false}
                             onChange={() => this.onD2ValueChange()}/>
                         </InputLabel>
                         <SwitchButton type="checkbox" checkedIcon={false} uncheckedIcon={false}
-                        checked={JSON.parse(localStorage.getItem('D'))}
+                        checked={JSON.parse(localStorage.getItem('D')) || false}
                         onChange={() => this.onDValueChange()}
                         height={20}
                         handleDiameter={18}/>
