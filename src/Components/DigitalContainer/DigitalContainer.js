@@ -17,7 +17,10 @@ class DigitalContainer extends Component {
                 </div>
                 <div className="digitalContainer lower-digital">
                     <label>{this.props.children}</label>
-                    <SwitchButton />
+                    <SwitchButton 
+                    disabled={false}
+                    checked={false}
+                    onChange={false}/>
                     <button className="pwm">PWM</button>
                     <button className="dac">DAC</button>
                 </div>

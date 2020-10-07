@@ -202,7 +202,7 @@ class InputOutput extends Component {
                                 B1</span>
             <SwitchButton 
             disabled={!this.state.B1}
-            checked={JSON.parse(localStorage.getItem('b1-I/O'))}
+            checked={JSON.parse(localStorage.getItem('b1-I/O')) || false}
             onChange={this.b1CheckedState}
             />
             </label>
@@ -210,7 +210,7 @@ class InputOutput extends Component {
                 B2
                 <SwitchButton 
                 disabled={!this.state.B2}
-                checked={JSON.parse(localStorage.getItem('b2-I/O'))}
+                checked={JSON.parse(localStorage.getItem('b2-I/O')) || false}
                 onChange={this.b2CheckedState}
                 />
             </label>
@@ -288,7 +288,7 @@ class InputOutput extends Component {
                                 C1</span>
                 <SwitchButton 
                 disabled={!this.state.C1}
-                checked={JSON.parse(localStorage.getItem('c1-I/O'))}
+                checked={JSON.parse(localStorage.getItem('c1-I/O')) || false}
                 onChange={this.c1CheckedState}
                 />
             </label>
@@ -296,7 +296,7 @@ class InputOutput extends Component {
                 C2
                 <SwitchButton 
                 disabled={!this.state.C2}
-                checked={JSON.parse(localStorage.getItem('c2-I/O'))}
+                checked={JSON.parse(localStorage.getItem('c2-I/O')) || false}
                 onChange={this.c2CheckedState}
                 />
             </label>
@@ -320,7 +320,7 @@ class InputOutput extends Component {
                                 A1</span>
                 <SwitchButton
                 disabled={!this.state.D1}
-                checked={JSON.parse(localStorage.getItem('d1-I/O'))}
+                checked={JSON.parse(localStorage.getItem('d1-I/O')) || false}
                 onChange={this.d1CheckedState}
                 />
             </label>
@@ -328,7 +328,7 @@ class InputOutput extends Component {
                 D2
                 <SwitchButton
                 disabled={!this.state.D2}
-                checked={JSON.parse(localStorage.getItem('d2-I/O'))}
+                checked={JSON.parse(localStorage.getItem('d2-I/O')) || false}
                 onChange={this.d2CheckedState}
                 />
             </label>
@@ -349,14 +349,14 @@ class InputOutput extends Component {
                                 A1</span>
                                 <SwitchButton  
                                 disabled={!this.state.A1}
-                                checked={JSON.parse(localStorage.getItem('a1-I/O'))}
+                                checked={JSON.parse(localStorage.getItem('a1-I/O')) || false}
                                 onChange={this.a1CheckedState}/>
                             </label>
                             <label className="lower-label-input">
                                 A2
                                 <SwitchButton
-                                
-                                checked={JSON.parse(localStorage.getItem('a2-I/O'))}
+                                checked={this.state.A2Checked}
+                                checked={JSON.parse(localStorage.getItem('a2-I/O')) || false}
                                 onChange={this.a2CheckedState}
                                 />
                             </label>
