@@ -10,11 +10,11 @@ export const BorderDiv = styled.div`
     font-weight: 600;
     width: 100%;
 
-    @media (max-width: 746px){
-        padding: 15px;
+    @media (max-width: 776px){
+        padding: 12px;
     }
     @media (max-width: 666px){
-        padding: 10px;
+        padding: 7px;
     }
     @media (max-width: 464px){
         padding: 4%;

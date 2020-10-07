@@ -210,8 +210,8 @@ class InputOutput extends Component {
             onChange={this.b1CheckedState}
             />
             </label>
-            <label className="lower-label-input">
-                B2
+            <label className="lower-label-input input-bd">
+               <span> B2</span>
                 <SwitchButton 
                 disabled={!this.state.B2}
                 checked={JSON.parse(localStorage.getItem('b2-I/O')) || false}
@@ -280,7 +280,7 @@ class InputOutput extends Component {
             <div className="sp">
             <label>SPI</label>
             <input type="checkbox" 
-            className="i2cinput circle" 
+            className="i2cinput circle spicircle" 
             disabled={!(this.state.D2 && this.state.D1) && !(this.state.C1 && this.state.C2)}
             onChange={() => 
                 this.setState({showPopupSp1: !this.state.showPopupSp1})}
@@ -297,8 +297,8 @@ class InputOutput extends Component {
                 onChange={this.c1CheckedState}
                 />
             </label>
-            <label className="lower-label-input">
-                C2
+            <label className="lower-label-input input-bd">
+               <span> C2</span>
                 <SwitchButton 
                 disabled={!this.state.C2}
                 checked={JSON.parse(localStorage.getItem('c2-I/O')) || false}
@@ -329,9 +329,9 @@ class InputOutput extends Component {
                 onChange={this.d1CheckedState}
                 />
             </label>
-            <label className="lower-label-input">
-                D2
-                <SwitchButton
+            <label className="lower-label-input input-left">
+               <span> D2 </span>
+                <SwitchButton className="ADSwitch"
                 disabled={!this.state.D2}
                 checked={JSON.parse(localStorage.getItem('d2-I/O')) || false}
                 onChange={this.d2CheckedState}
@@ -357,8 +357,8 @@ class InputOutput extends Component {
                                 checked={JSON.parse(localStorage.getItem('a1-I/O')) || false}
                                 onChange={this.a1CheckedState}/>
                             </label>
-                            <label className="lower-label-input">
-                                A2
+                            <label className="lower-label-input input-left">
+                               <span> A2 </span>
                                 <SwitchButton
                                 checked={this.state.A2Checked}
                                 checked={JSON.parse(localStorage.getItem('a2-I/O')) || false}

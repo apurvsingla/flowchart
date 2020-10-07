@@ -10,7 +10,7 @@
 
 .right{
     border: 1px solid #311b92;
-    padding: 14px 0 12px 60px;
+    padding: 0 10px 15px 60px;
     margin-left: 4%;
     max-height: 167px;
     display: flex;
@@ -19,7 +19,7 @@
     justify-content: center;
     border-radius: 20px;
     position: relative;
-    top: 5px;
+    top: 12px;
     background-color: #311b92;
 }
 
@@ -30,18 +30,30 @@
 }
 
 .left-upper, .right-upper, .right-lower, .left-lower{
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     border: 1px solid #311b92;
     background-color: white;
     font-weight: 600;
     color: #311b92;
 }
 
+.right-upper{
+    width: 100%;
+    label{
+        padding: 3px;
+    }
+}
+
+.right-lower{
+    width: 100%;
+}
+
+
 
 .sp{
     position: relative;
-    left: -90px;
-    top: 110px;
+    right: 90px;
+    top: 100px;
     display: flex;
     flex-direction: column;
     font-size: 0.8rem;
@@ -54,14 +66,28 @@
     }
 }
 
+.upper-label-input>span, .lower-label-input>span{
+    position: relative;
+    bottom: 2px;
+}
+
+.lower-label-input>span{
+    left: 5px;
+}
+
+// .ADSwitch{
+//     position: relative;
+//     right: 5px;
+// }
+
 .circle{
     appearance: none;
-    width: 25px;
-    height: 25px;
+    width: 22px;
+    height: 22px;
     border-radius: 25px;
     background-color: #e7e6e7;   
     position: relative;
-    top: 7px;
+    top: 5px;
     &:checked{
         background-color: green;
     }
@@ -69,6 +95,10 @@
     &:focus{
         outline: none !important;
     }
+}
+
+.spicircle{
+    left: 3px;
 }
 
 .right-lower, .right-upper {
@@ -84,14 +114,24 @@
     width: 90px;
 }
 
-.lower-label-input{
+.input-bd{
     position: relative;
     right: 2px;
+}
+
+.input-left{
+    position: relative;
+    right: 6px;
 }
 
 .upper-label-input>span{
     position: relative;
     right: 1px;
+}
+
+.input-bd>span{
+    position: relative;
+    left: 0;
 }
 
 
@@ -103,7 +143,7 @@
 }
 
 .i2cinput{
-    margin-left: 10px;
+    margin-left: 7px;
     
 }
 
@@ -128,8 +168,7 @@
     font-size: 0.8rem;
     display: flex;
     flex-direction: column;
-    position: relative;
-    bottom: 20px;
+    
 
     span{
         text-align: center;
@@ -152,11 +191,12 @@
         top: -20px;
         right: 20px;
         font-size: 1.5rem;
+        text-align: center;
     }
    .arrangecircleSp1{
-
+       margin: auto;
        position: relative;
-       left: 50px;  
+       right: 20px;
    }
 }
 
@@ -172,13 +212,25 @@
     display: flex;
     flex-direction: column;
     background-color: blue;
-    padding: 12px;
     border-radius: 20px;
     font-size: 0.5rem;
+    font-weight: normal;
+    padding: 30px;
+    padding-left: 10px;
+    position: relative;
+    left: 9px;
+    overflow: hidden;
+    text-align: center;
+    height: 100%;
+    width: 68%;
 
-    .arrangecircleI2c{
+    span{
         position: relative;
-        left: 25px;
+        left: 10px;
+    }
+    input{
+        position: relative;
+        left: 40px;
     }
 }
 
@@ -188,70 +240,40 @@
         bottom: 5px;
     }
 }
+@media (max-width: 575px) {
+    .activatedI2c{
+        width: 100%;
+        position: relative;
+        left: -20px;
+        padding-left: 0px;
+    }
 
+    .sp{
+        right: 90px;
+    }
+} 
 @media (max-width: 662px) {
-    .left, .right{
-        transform: scale(0.98);
-    }
-    
-    .right {
-        padding-top:14px;
-        padding-bottom: 12px;
-    }
     .flex{
         padding: 50px;
-        width: 65%;
-        transform: scale(1);
-    }
-} 
-
-@media (max-width: 623px) {    
-    .right {
-        padding-top: 3.5rem;
-        padding-bottom: 3.45rem;
+        width: 75%;
+        transform: scale(1.2);
     }
 } 
 
 
-@media (max-width: 560px) {
-    .left, .right{
-        transform: scale(0.96);
-    }
-    .right {
-        padding-top: 1rem;
-        padding-bottom: 0.9rem;
-    }
+@media (max-width: 400px) {
     .flex{
-        width: 100%;
+        transform: scale(1);
+        width: 65%;
     }
-    
-} 
-
-@media (max-width: 412px) {
-    .right {
-        padding-top: 3.5rem;
-        padding-bottom: 3.45rem;
+    .left{
+        margin-right: 5px;
     }
-}
-
-
-@media (max-width: 389px) {
-    .sp{
-        top: 140px;
-    }
-    .activatedI2c{
-        .arrangecircleI2c{
-            left: 5px;
-        }
+    .right{
+        margin-left: 5px;
     }
 } 
 
-@media (max-width: 360px){
-    .right {
-        padding-top:56px;
-        padding-bottom: 54px;
-    }
-}
 
 @media (max-width: 321px) {    
     .flex{

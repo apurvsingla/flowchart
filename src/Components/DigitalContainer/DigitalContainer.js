@@ -8,7 +8,7 @@ class DigitalContainer extends Component {
             <BorderDiv>
                 <div className="digitalContainer upper-digital">
                     <label>{this.props.text}</label>
-                    <SwitchButton 
+                    <SwitchButton className="switch_button"
                     disabled={false}
                     checked={false}
                     onChange={false}/>
@@ -17,7 +17,7 @@ class DigitalContainer extends Component {
                 </div>
                 <div className="digitalContainer lower-digital">
                     <label>{this.props.children}</label>
-                    <SwitchButton 
+                    <SwitchButton className="switch_button"
                     disabled={false}
                     checked={false}
                     onChange={false}/>

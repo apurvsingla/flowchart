@@ -8,16 +8,26 @@
     outline: none;
     border: none;
     position: relative;
-    bottom: 3px;
-    left: 5px;
+    bottom: 5px;
+    left: 7px;
+    padding: 5px;
 }
 
 .lower-digital{
-    position: relative;
-    right: 2px;
+    label{
+        position: relative;
+        bottom: 3px;
+    }
 }
 
 .upper-digital>label{
     position: relative;
     right: 1px;
+    bottom: 3px;
+}
+
+.digitalContainer{
+    position: relative;
+    top: 5px;
+    text-align: center;
 }
