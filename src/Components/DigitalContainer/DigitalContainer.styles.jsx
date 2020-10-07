@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const BorderDiv = styled.div`
     border: 1px solid #311b92;
-    padding: 20px;
+    padding: 10%;
     border-radius: 20px;
     margin: 5%;
     background-color: white;
@@ -17,6 +17,7 @@ export const BorderDiv = styled.div`
         padding: 7px;
     }
     @media (max-width: 464px){
-        padding: 4%;
+        padding: auto;
+        transform: scale(0.9);
     }
 `;

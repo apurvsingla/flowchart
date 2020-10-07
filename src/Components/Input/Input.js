@@ -360,7 +360,7 @@ class InputOutput extends Component {
                             <label className="lower-label-input input-left">
                                <span> A2 </span>
                                 <SwitchButton
-                                checked={this.state.A2Checked}
+                                disabled={!this.state.A2}
                                 checked={JSON.parse(localStorage.getItem('a2-I/O')) || false}
                                 onChange={this.a2CheckedState}
                                 />
