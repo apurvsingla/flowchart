@@ -355,7 +355,7 @@ class InputOutput extends Component {
                             <label className="lower-label-input">
                                 A2
                                 <SwitchButton
-                                checked={this.state.A2Checked}
+                                
                                 checked={JSON.parse(localStorage.getItem('a2-I/O'))}
                                 onChange={this.a2CheckedState}
                                 />

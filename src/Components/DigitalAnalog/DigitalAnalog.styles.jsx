@@ -4,7 +4,6 @@ export const Main = styled.div`
     display: flex;
     justify-content: center;
     width: 100%;
-    
 `;
 
 export const InnerDiv = styled.div`
