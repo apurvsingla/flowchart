@@ -1,6 +1,6 @@
 import React from 'react'
 import {Container, Main, LeftButton, RightButton} from './BottomContainer.styles';
-import {Redirect} from 'react-router-dom';
+// import {Redirect} from 'react-router-dom';
 
 export default function BottomContainer(props) {
     // const nextActive = () => {
