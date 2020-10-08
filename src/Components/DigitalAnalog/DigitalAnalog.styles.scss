@@ -4,6 +4,15 @@
     right: 20px;
     display: flex;
     flex-direction: column;
+    label{
+        position: relative;
+        right: 33px;
+    }
+}
+
+.left-para{
+    position: relative;
+    right: 5px;
 }
 
 .right-spi{

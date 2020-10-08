@@ -206,7 +206,7 @@ class DigitalAnalog extends Component {
                             <p>C1 &rarr; Clock</p>
                             <p>C2 &rarr; MOSI</p>
                             <p>D1 &rarr; MISO</p>
-                            <p>D2 &rarr; RST</p>
+                            <p className="left-para">D2 &rarr; RST</p>
                         </div>
                     </Left>
                 </DigitalContainerForComponent>): 
@@ -236,7 +236,7 @@ class DigitalAnalog extends Component {
                     </Left>
                     <div className="right-ic2">
                         <p>D1 &rarr; MISO</p>
-                        <p>D2 &rarr; RST</p>
+                        <p className="left-para">D2 &rarr; RST</p>
                     </div>
                 </DigitalContainerForComponent>: <DigitalContainer text="D1" text1="D2" 
                         disable1={!this.state.D1Digi} 

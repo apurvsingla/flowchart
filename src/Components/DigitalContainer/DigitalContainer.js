@@ -45,7 +45,7 @@ class DigitalContainer extends Component {
                         checked={JSON.parse(localStorage.getItem('uart'))} />
                     </Left>
                     <div className="right-uart">
-                        <p>B1 &rarr; TX</p>
+                        <p className="left-uart-para">B1 &rarr; TX</p>
                         <p>B2 &rarr; RX</p>
                     </div>
                 </DigitalContainerForComponent>)
