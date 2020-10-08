@@ -21,10 +21,13 @@ export const HeaderContainer = styled.div`
     @media (max-width: 438px){
         transform: scale(0.53);
     }  
+    @media (max-width: 375px){
+        position: relative;
+        left: 5px;
+    }  
     @media (max-width: 368px){
         transform: scale(0.45);
     }  
-    
 `;
 
 export const HeaderOptions = styled.div`

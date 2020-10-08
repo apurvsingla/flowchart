@@ -13,7 +13,11 @@ export const MainContainer = styled.div`
     }
     @media (max-width: 388px){
         transform: scale(0.55);
-    }   
+    }     
+    @media (min-height: 1100px){
+        position: relative;
+        top: 200px;
+    } 
 `;
 
 export const ButtonBackground = styled.div`

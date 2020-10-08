@@ -89,7 +89,7 @@ class Port extends Component {
     }
     render() {   
         return (
-            <div>
+            <>
             <MainContainer>
                 <ButtonDiv>
                 <ButtonBackground>
@@ -182,7 +182,7 @@ class Port extends Component {
             </MainContainer>
             <br/>
             <BottomContainer />
-            </div>
+            </>
             
         );
     }

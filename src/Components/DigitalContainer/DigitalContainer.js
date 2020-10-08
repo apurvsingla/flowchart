@@ -11,21 +11,30 @@ class DigitalContainer extends Component {
                 disabled={this.props.disable1} 
                 checked={this.props.checked || false} 
                 changeToggle1={this.props.changeToggle1}/>
-                <button className="pwm" 
-                disabled={this.props.disable1}>PWM</button>
-                <button className="dac" 
-                disabled={this.props.disable1}>DAC</button>
+                <input className={this.props.checkedPWM1 + " pwm"}
+                disabled={this.props.disable1}
+                onClick={this.props.togglePWM1}
+                value="PWM" type="button" />
+                <input className={this.props.checkedDAC1 + " dac"}
+                disabled={this.props.disable1}
+                onClick={this.props.toggleDAC1}
+                value="DAC" type="button" />
             </div>
+            <span className="spanspace"></span>
             <div className="digitalContainer lower-digital">
                 <label>{this.props.text1}</label>
                 <SwitchDigital className="switch_button"
                 disabled={this.props.disable2}  
                 checked1={this.props.checked1 || false}
                 changeToggle2={this.props.changeToggle2}/>
-                <button className="pwm" 
-                disabled={this.props.disable2}>PWM</button>
-                <button className="dac" 
-                disabled={this.props.disable2}>DAC</button>
+                <input className={this.props.checkedPWM2 + " pwm"}
+                disabled={this.props.disable2}
+                onClick={this.props.togglePWM2}
+                value="PWM" type="button" />
+                <input className={this.props.checkedDAC2 + " dac"}
+                disabled={this.props.disable2}
+                onClick={this.props.toggleDAC2}
+                value="DAC" type="button" />
             </div>
         </BorderDiv>)
         let UART = (<DigitalContainerForComponent>

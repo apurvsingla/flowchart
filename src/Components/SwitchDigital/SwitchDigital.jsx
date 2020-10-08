@@ -13,7 +13,7 @@ export default function SwitchDigital(props) {
           height: "100%",
           fontSize: 10,
           color: "white",
-          paddingLeft: 12,
+          paddingLeft: 3,
         }}
       >
         Digital
@@ -28,7 +28,7 @@ export default function SwitchDigital(props) {
           height: "100%",
           fontSize: 10,
           color: "white",
-          paddingRight: 10,
+          paddingRight: 5,
         }}
       >
         Analog
@@ -36,8 +36,9 @@ export default function SwitchDigital(props) {
         } 
         onColor='#f8c01d'
         offColor='#5095ce'
-        height={18}
-        handleDiameter={16}
+        height={22}
+        width={60}
+        handleDiameter={20}
         disabled={props.disabled}
         checked={props.checked || props.checked1 || false}
         onChange={props.changeToggle1 || props.changeToggle2}

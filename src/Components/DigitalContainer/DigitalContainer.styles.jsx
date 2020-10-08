@@ -8,25 +8,31 @@ export const BorderDiv = styled.div`
     background-color: white;
     color: #311b92;
     font-weight: 600;
-    width: 170px;
+    width: 178px;
 
     @media (max-width: 776px){
         padding: 12px;
     }
     @media (max-width: 666px){
         padding: 7px;
+        width: 173px;
+        transform: scale(0.95);
     }
     @media (max-width: 464px){
         padding: auto;
         transform: scale(0.9);
+        position: relative;
+        top: 50px;
     }
     @media (max-width: 359px){
-        width: 140px;
-        box-sizing: border-box;
+        width: 173px;
         display: flex;
         flex-direction: column;
-        
+        transform: scale(0.7);
     }
+    @media (min-height: 900px){
+        transform: scale(1.2)
+    } 
 `;
 
 export const DigitalContainerForComponent = styled.div`

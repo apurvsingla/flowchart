@@ -10,6 +10,11 @@
     position: relative;
     left: 7px;
     padding: 4px;
+    color: white;
+}
+.spanspace{
+    display: block; 
+    margin-bottom: 5px;
 }
 
 .lower-digital{
@@ -35,6 +40,14 @@
     box-sizing: border-box;
     padding: 5px;
     font-weight: 600;
+}
+
+.true{
+    background-color: #6f6f6f;
+}
+
+.false{
+    background-color: #d3d2d2;
 }
 
 
