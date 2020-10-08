@@ -1,7 +1,14 @@
 import React from 'react'
 import {Container, Main, LeftButton, RightButton} from './BottomContainer.styles';
 
-export default function BottomContainer() {
+export default function BottomContainer(props) {
+    // const nextActive = () => {
+    //     const nextPost = [history.props()]
+    // }
+    React.useEffect(() => {
+        console.log(props.history)
+        
+    }, []);
     return (
         <Main>
             <LeftButton>Prev</LeftButton>

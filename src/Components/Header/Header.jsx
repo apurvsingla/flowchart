@@ -8,21 +8,35 @@ import {HeaderContainer,
 import {withRouter} from 'react-router-dom';
 import './Header.scss';
 
-const Header = (props) => {
+const Header = () => {
+    const [click, setClick] = React.useState(true)
+    // const handleClick = (e) => {
+    //     if(click){
+    //         e.preventDefault();
+    //     }
+    // }
     return (
         <HeaderContainer>
             <HeaderOptions>
-            <HeaderBackButton src={process.env.PUBLIC_URL + '/images/login/login_button_back.png'} alt="back" width="90"/>
+            <HeaderBackButton 
+            // onClick={handleClick}
+            src={process.env.PUBLIC_URL + '/images/login/login_button_back.png'} alt="back" width="90"/>
                 <HeaderLinksContainer to="/" activeClassName='is-active' exact>
                     Select ports
                 </HeaderLinksContainer>
-                <HeaderLinksContainer to="/input-output" activeClassName='is-active'>
+                <HeaderLinksContainer 
+                // onClick={handleClick}
+                to="/input-output" activeClassName='is-active'>
                     Inputs or Outputs
                 </HeaderLinksContainer>
-                <HeaderLinksContainer to="/digital-analog" activeClassName='is-active'>
+                <HeaderLinksContainer
+                // onClick={handleClick}
+                to="/digital-analog" activeClassName='is-active'>
                     Digital or Analogs
                 </HeaderLinksContainer>
-                <HeaderLinksContainer to="/flowchart" activeClassName='is-active'>
+                <HeaderLinksContainer 
+                // onClick={handleClick}
+                to="/flowchart" activeClassName='is-active'>
                 FlowChart
                 </HeaderLinksContainer>
                 <HeaderWifiImage src={process.env.PUBLIC_URL + '/images/header/bluetooth_inactive.png'}  alt="logo"/>
