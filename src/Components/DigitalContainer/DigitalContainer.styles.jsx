@@ -63,6 +63,7 @@ export const DigitalContainerForComponent = styled.div`
     @media (max-width: 464px){
         padding: auto;
         transform: scale(0.9);
+        top: 50px;
     }
     @media (max-width: 359px){
         width: 150px;
