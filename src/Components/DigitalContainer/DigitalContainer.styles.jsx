@@ -8,7 +8,7 @@ export const BorderDiv = styled.div`
     background-color: white;
     color: #311b92;
     font-weight: 600;
-    width: 100%;
+    width: 170px;
 
     @media (max-width: 776px){
         padding: 12px;
@@ -20,4 +20,57 @@ export const BorderDiv = styled.div`
         padding: auto;
         transform: scale(0.9);
     }
+    @media (max-width: 359px){
+        width: 140px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        
+    }
+`;
+
+export const DigitalContainerForComponent = styled.div`
+    border: 1px solid #311b92;
+    position: relative;
+    left: 8px;
+    border-radius: 20px;
+    -color: #311b92;
+    background: linear-gradient(to right,  #311b92 45%,white 45%);
+    color: white;
+    width: 168px;
+    display: flex;
+    justify-content: space-around;
+    padding: 12%;
+    position: relative;
+    top: 9px;
+
+    @media (max-width: 776px){
+        padding: 16px;
+        padding-right: 11px;
+    }
+    @media (max-width: 666px){
+        padding: 11px;
+        padding-right: 0px;
+    }
+    @media (max-width: 464px){
+        padding: auto;
+        transform: scale(0.9);
+    }
+    @media (max-width: 359px){
+        width: 150px;
+    }
+`;
+
+export const Left = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+`;
+
+export const Big = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 `;

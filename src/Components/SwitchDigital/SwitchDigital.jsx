@@ -1,8 +1,7 @@
 import React from 'react';
 import Switch from 'react-switch';
-import './SwitchButton.scss';
-
-export default function SwitchButton(props) {
+import './SwitchDigital.styles.scss'
+export default function SwitchDigital(props) {
     return (
         <Switch type="checkbox" 
         checkedIcon={
@@ -14,10 +13,10 @@ export default function SwitchButton(props) {
           height: "100%",
           fontSize: 10,
           color: "white",
-          paddingLeft: 15,
+          paddingLeft: 12,
         }}
       >
-        Output
+        Digital
       </div>
         } 
         uncheckedIcon={
@@ -29,10 +28,10 @@ export default function SwitchButton(props) {
           height: "100%",
           fontSize: 10,
           color: "white",
-          paddingRight: 11,
+          paddingRight: 10,
         }}
       >
-        Input
+        Analog
       </div>
         } 
         onColor='#f8c01d'
@@ -40,8 +39,8 @@ export default function SwitchButton(props) {
         height={18}
         handleDiameter={16}
         disabled={props.disabled}
-        checked={props.checked}
-        onChange={props.onChange}
+        checked={props.checked || props.checked1 || false}
+        onChange={props.changeToggle1 || props.changeToggle2}
         className="ls"
         />
     )
