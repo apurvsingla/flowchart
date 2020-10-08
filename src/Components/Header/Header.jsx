@@ -8,7 +8,7 @@ import {HeaderContainer,
 import {withRouter, useHistory} from 'react-router-dom';
 import './Header.scss';
 
-const Header = (props) => {
+const Header = () => {
     const [click] = React.useState(true)
     const handleClick = (e) => {
         if(click){
@@ -20,8 +20,12 @@ const Header = (props) => {
     const back = () => {
         if(history.location.pathname === '/'){
             return(null)
-        }else{
-            history.goBack();
+        }else if(history.location.pathname === '/input-output'){
+            history.push('/');
+        }else if(history.location.pathname === '/digital-analog'){
+            history.push('/input-output');
+        }else if(history.location.pathname === '/flowchart'){
+            history.push('/digital-analog');
         }
     }
     return (
