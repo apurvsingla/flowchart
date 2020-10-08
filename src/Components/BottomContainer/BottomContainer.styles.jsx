@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-
+// import {Redirect} from 'react-router-dom';
 export const Main = styled.div`
     display: flex;
     justify-content: center;
@@ -24,6 +24,9 @@ export const Container = styled.div`
       @media (max-width: 409px) {
         font-size: 0.8rem;
       } 
+      @media (max-width: 328px) {
+        font-size: 0.7rem;
+      } 
 `;
 
 export const LeftButton = styled.button`
@@ -45,6 +48,9 @@ export const LeftButton = styled.button`
         padding-right: 30px;
         padding-left: 30px;
       } 
+      &:hover{
+        opacity: 0.9;
+    }
 `;
 
 export const RightButton = styled.button`
@@ -66,4 +72,7 @@ export const RightButton = styled.button`
         padding-right: 30px;
         padding-left: 30px;
       } 
+      &:hover{
+        opacity: 0.9;
+    }
 `;

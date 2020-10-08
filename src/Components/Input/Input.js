@@ -376,7 +376,7 @@ class InputOutput extends Component {
                 </div>
             </MainInputComponent>
             <br/>
-            <BottomContainer />
+            <BottomContainer to="/digital-analog" prev="/"/>
             </div>
         );
     }

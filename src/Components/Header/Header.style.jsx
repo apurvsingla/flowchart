@@ -25,6 +25,7 @@ export const HeaderContainer = styled.div`
     @media (max-width: 368px){
         transform: scale(0.45);
     }  
+
 `;
 
 export const HeaderOptions = styled.div`

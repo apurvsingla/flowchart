@@ -230,7 +230,7 @@ class DigitalAnalog extends Component {
                         {this.state.I2C ? <DigitalContainerForComponent className="lower-digital">
                     <Left>
                         <label>I2C</label>
-                        <input type="checkbox" className="circle arrangeUartDigitalCircle" 
+                        <input type="checkbox" className="circle" 
                         onChange={this.toggleI2C}
                         checked={JSON.parse(localStorage.getItem('i2c')) || false} />
                     </Left>
@@ -262,7 +262,7 @@ class DigitalAnalog extends Component {
                 </InnerDiv>
             </Main>
             <br/>
-            <BottomContainer />
+            <BottomContainer to="/flowchart" prev="/input-output"/>
             </>
         );
     }
