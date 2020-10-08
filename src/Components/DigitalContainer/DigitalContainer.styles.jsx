@@ -51,23 +51,28 @@ export const DigitalContainerForComponent = styled.div`
     padding: 12%;
     position: relative;
     top: 9px;
-
-    @media (max-width: 776px){
-        padding: 16px;
-        padding-right: 11px;
+    
+   @media (max-width: 776px){
+        padding: 12px;
     }
     @media (max-width: 666px){
-        padding: 11px;
-        padding-right: 0px;
+        padding: 7px;
+        width: 173px;
+        transform: scale(0.95);
     }
     @media (max-width: 464px){
         padding: auto;
         transform: scale(0.9);
+        position: relative;
         top: 50px;
     }
     @media (max-width: 359px){
-        width: 150px;
+        width: 173px;
+        transform: scale(0.7);
     }
+    @media (min-height: 900px){
+        transform: scale(1.2)
+    } 
 `;
 
 export const Left = styled.div`

@@ -62,5 +62,8 @@ export const RightButton = styled.button`
     font-size: 1.2rem;
     @media (max-width: 644px) {
         left: 70%;
+        padding: 3px;
+        padding-right: 30px;
+        padding-left: 30px;
       } 
 `;
