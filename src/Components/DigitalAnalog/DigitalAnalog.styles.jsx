@@ -3,6 +3,8 @@ import styled from 'styled-components';
 export const Main = styled.div`
     display: flex;
     justify-content: center;
+    align-items: center;
+    text-align: center;
     @media (min-height: 900px){
         position: relative;
         top: 200px;
@@ -11,17 +13,14 @@ export const Main = styled.div`
 
 export const InnerDiv = styled.div`
     display:flex;
-    width: 70%;
+    width: 60%;
     height: 300px;
     justify-content: space-around;
 
-    @media (max-width: 600px){
-        width: 90%;
-    }
     @media (max-width: 400px){
         width: 100%;
         position: relative;
-        right: 13px;
+        right: 10px;
     }
     @media (max-width: 359px){
         right: 25px;
@@ -31,6 +30,7 @@ export const InnerDiv = styled.div`
 export const Container = styled.div`
     display: flex;
     flex-direction: column;
+    justify-content: center;
     transform: scale(1.2);
     @media (max-width: 810px){
         transform: scale(1.15);

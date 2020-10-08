@@ -3,10 +3,10 @@ import { NavLink } from 'react-router-dom';
 
 export const HeaderContainer = styled.div`
     text-align:center;
-    width: 100%;
+    width: 99vw;
     margin-bottom: 70px;
     padding: 12px;
-    box-sizing: border-box;
+    
     @media (max-width: 768px) {
         padding: 5px;
         transform: scale(0.8);
@@ -21,10 +21,7 @@ export const HeaderContainer = styled.div`
     @media (max-width: 438px){
         transform: scale(0.53);
     }  
-    @media (max-width: 375px){
-        position: relative;
-        left: 5px;
-    }  
+     
     @media (max-width: 368px){
         transform: scale(0.45);
     }  
