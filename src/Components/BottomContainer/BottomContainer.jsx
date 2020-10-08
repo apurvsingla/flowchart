@@ -5,10 +5,10 @@ export default function BottomContainer(props) {
     // const nextActive = () => {
     //     const nextPost = [history.props()]
     // }
-    React.useEffect(() => {
-        console.log(props.history)
+    // React.useEffect(() => {
+    //     console.log(props.history)
         
-    }, []);
+    // }, []);
     return (
         <Main>
             <LeftButton>Prev</LeftButton>
