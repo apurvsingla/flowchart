@@ -1,5 +1,6 @@
 import React from 'react'
 import {Container, Main, LeftButton, RightButton} from './BottomContainer.styles';
+import {Redirect} from 'react-router-dom';
 
 export default function BottomContainer(props) {
     // const nextActive = () => {
@@ -17,7 +18,9 @@ export default function BottomContainer(props) {
                 <br/>
             <p>Description line 2</p>
         </Container>
-        <RightButton>Next</RightButton>
+        <RightButton>
+             Next
+        </RightButton>
         </Main>
     )
 }

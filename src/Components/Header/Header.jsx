@@ -27,17 +27,17 @@ const Header = () => {
                 <HeaderLinksContainer 
                 // onClick={handleClick}
                 to="/input-output" activeClassName='is-active'>
-                    Inputs or Outputs
+                    Input or Output
                 </HeaderLinksContainer>
                 <HeaderLinksContainer
                 // onClick={handleClick}
                 to="/digital-analog" activeClassName='is-active'>
-                    Digital or Analogs
+                    Digital or Analog
                 </HeaderLinksContainer>
                 <HeaderLinksContainer 
                 // onClick={handleClick}
                 to="/flowchart" activeClassName='is-active'>
-                FlowChart
+                Flowchart
                 </HeaderLinksContainer>
                 <HeaderWifiImage src={process.env.PUBLIC_URL + '/images/header/bluetooth_inactive.png'}  alt="logo"/>
                 <HeaderHelp src={process.env.PUBLIC_URL + '/images/login/button_help.png'} alt="back" width="90"/>
