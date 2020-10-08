@@ -9,7 +9,7 @@ import {withRouter} from 'react-router-dom';
 import './Header.scss';
 
 const Header = () => {
-    const [click, setClick] = React.useState(true)
+    // const [click, setClick] = React.useState(true)
     // const handleClick = (e) => {
     //     if(click){
     //         e.preventDefault();
