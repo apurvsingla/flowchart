@@ -7,4 +7,9 @@ export const MainInputComponent = styled.div`
     justify-content: center;
     align-items: center;
     width: 100%;
+    @media (max-width: 411px) {
+        @media (max-height: 823px) {
+            transform: scale(0.8);
+        }
+    }
 `;

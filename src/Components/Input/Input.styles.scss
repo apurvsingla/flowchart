@@ -240,13 +240,6 @@
     }
 }
 
-// @media (min-width: 769px) {
-//     .flex{
-//         position: relative;
-//         bottom: 60px;
-//     }
-// }
-
 @media (max-width: 724px) {
     .left{
         position: relative;
@@ -268,7 +261,6 @@
         right: 90px;
     }
 } 
-
 @media (max-width: 400px) {
     .flex{
         transform: scale(1);
