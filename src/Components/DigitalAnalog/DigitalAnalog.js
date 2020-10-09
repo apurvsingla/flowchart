@@ -135,7 +135,7 @@ class DigitalAnalog extends Component {
         localStorage.setItem('DACC1', !this.state.DACC1)
     }
     toggleDACD1 = () => {
-        this.setState({DACD1: !this.state.PWMD1});
+        this.setState({DACD1: !this.state.DACD1});
         localStorage.setItem('DACD1', !this.state.DACD1)
     }
 
