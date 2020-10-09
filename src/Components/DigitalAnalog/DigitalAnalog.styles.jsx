@@ -60,9 +60,12 @@ export const DigitalContainerForComponent = styled.div`
     width: 168px;
     display: flex;
     justify-content: space-around;
-    padding: 12%;
-    position: relative;
-    top: 9px;
+    padding: 14%;
+    padding-top: 7%;
+    padding-bottom: 7%;
+    margin-top:20px;
+    bottom: 10px;
+    
     
     @media (max-width: 776px){
         padding: 12px;
