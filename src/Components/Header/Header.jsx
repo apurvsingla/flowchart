@@ -10,9 +10,7 @@ HeaderLinksContainer,
 HeaderWifiImage,
 HeaderBackButton, 
 HeaderHelp,
-FlowchartHeaderBluetoothButton,
-OptionSettings,
-OptionImage} from './Header.style';
+} from './Header.style';
 
 import './Header.scss';
 
