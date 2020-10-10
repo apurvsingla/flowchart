@@ -2,7 +2,7 @@ import styled from 'styled-components';
 // import {Redirect} from 'react-router-dom';
 export const Main = styled.div`
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
 `;
 
 export const Container = styled.div`
@@ -10,8 +10,8 @@ export const Container = styled.div`
     border-radius: 15px;
     padding: 15px;
     width: 50%;
-    position: absolute;
-    top:80%;
+    margin-top: 1%;
+    height: 50px;
     @media (max-width: 724px) {
         margin-top: 5px;
     } 
@@ -30,9 +30,8 @@ export const Container = styled.div`
 `;
 
 export const LeftButton = styled.button`
-    position: absolute;
-    top: 85%;
-    right: 81%;
+    margin-top: 5%;
+    height: 40px;
     padding: 5px;
     padding-right: 40px;
     padding-left: 40px;
@@ -54,9 +53,8 @@ export const LeftButton = styled.button`
 `;
 
 export const RightButton = styled.button`
-    position: absolute;
-    top: 85%;
-    left: 81%;
+    margin-top: 5%;
+    height: 40px;
     padding: 5px;
     padding-right: 40px;
     padding-left: 40px;

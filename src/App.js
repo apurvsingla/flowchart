@@ -8,7 +8,7 @@ import {
 import Input from './Pages/InputOutput/Input';
 import Ports from './Pages/Ports/Port';
 import Digital from './Pages/Digital/Digital';
-
+import FlowchartPage from './Pages/FlowChartPage/FlowchartPage';
 import Header from './Components/Header/Header';
 import './App.css';
 class App extends Component {
@@ -20,6 +20,7 @@ class App extends Component {
           <Route exact path="/" component={Ports} />
           <Route exact path="/input-output" component={Input} />
           <Route exact path="/digital-analog" component={Digital} />
+          <Route exact path="/flowchart" component={FlowchartPage} />
         </Switch>
       </div>
     );
