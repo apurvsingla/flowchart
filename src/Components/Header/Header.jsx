@@ -110,7 +110,8 @@ const Header = () => {
                     <HeaderWifiImage src={process.env.PUBLIC_URL + '/images/header/bluetooth_inactive.png'}  alt="logo"/>
                     
                     </HeaderOptions>
-                    <HeaderHelp src={process.env.PUBLIC_URL + '/images/login/button_help.png'} alt="back" width="90"/>
+                    <HeaderHelp src={process.env.PUBLIC_URL + '/images/login/button_help.png'}
+                     alt="back" width="90"/>
                     
                 
             </HeaderContainer>

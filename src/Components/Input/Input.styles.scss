@@ -282,22 +282,8 @@
     
 } 
 
+  
 
-@media (min-height: 800px) {    
-    .flex{
-        position: relative;
-        top: 120px;
-        transform: scale(1.5);
-    }
-    
-} 
-@media (min-height: 1300px) {    
-    .flex{
-        top: 220px;
-        transform: scale(1.8);
-    }
-    
-} 
 @keyframes anvil {
     0% {
       transform: scale(1) translateY(0px);
