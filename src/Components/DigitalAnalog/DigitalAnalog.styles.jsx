@@ -4,10 +4,16 @@ export const Main = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    @media (min-height: 900px){
-        position: relative;
+    position: relative;
+    @media (min-height: 950px){
         top: 200px;
     } 
+
+    @media(max-height: 670px){
+        @media(max-width: 380px){
+            bottom: 100px;
+        }
+    }
 `;
 
 export const InnerDiv = styled.div`
