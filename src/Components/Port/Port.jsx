@@ -31,24 +31,6 @@ class Port extends Component {
         }
     }
 
-    componentWillMount() {
-        this.setState({A: !this.state.A});
-        this.setState({A1: !this.state.A1});
-        this.setState({A2: !this.state.A2});  
-        
-        this.setState({B: !this.state.B});
-        this.setState({B1: !this.state.B1});
-        this.setState({B2: !this.state.B2});
-
-        this.setState({C: !this.state.C});
-        this.setState({C1: !this.state.C1});
-        this.setState({C2: !this.state.C2});
-
-        this.setState({D: !this.state.D});
-        this.setState({D1: !this.state.D1});
-        this.setState({D2: !this.state.D2});
-      }
-
     componentDidMount(){
         this.setState({A: false});
         this.setState({A1: false});
@@ -69,8 +51,8 @@ class Port extends Component {
       
 
     onA1ValueChange = () => {
-        this.setState({A1: !this.state.A1});
         localStorage.setItem('A1', !this.state.A1);
+        this.setState({A1: !this.state.A1});
         if(((JSON.parse(localStorage.getItem('A1')) && JSON.parse(localStorage.getItem('A2')))) === true){
             this.setState({A: true})
             localStorage.setItem('A', true);
