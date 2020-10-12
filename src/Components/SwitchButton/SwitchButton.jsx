@@ -15,6 +15,8 @@ export default function SwitchButton(props) {
           fontSize: 10,
           color: "white",
           paddingLeft: 16,
+          position: "relative",
+          bottom: '1px'
         }}
       >
         Output
@@ -30,7 +32,9 @@ export default function SwitchButton(props) {
           fontSize: 10,
           color: "white",
           paddingRight: 11,
-          paddingBottom:5
+          paddingBottom:5,
+          position: "relative",
+          bottom: '1px'
         }}
       >
         Input

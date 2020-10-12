@@ -14,6 +14,8 @@ export default function SwitchDigital(props) {
           fontSize: 10,
           color: "white",
           paddingLeft: 3,
+          position: "relative",
+          bottom: '1px'
         }}
       >
         Digital
@@ -29,6 +31,8 @@ export default function SwitchDigital(props) {
           fontSize: 10,
           color: "white",
           paddingRight: 5,
+          position: "relative",
+          bottom: '1px'
         }}
       >
         Analog
