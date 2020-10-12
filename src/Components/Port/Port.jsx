@@ -16,76 +16,147 @@ class Port extends Component {
     constructor(){
         super();
         this.state = {
-            A1: false,
-            A2: false,
-            A: false,
-            B1: false,
-            B2: false,
-            B: false,
-            C1: false,
-            C2: false,
-            C: false,
-            D1: false,
-            D2: false,
-            D: false,
+            A1: localStorage.getItem('A1') || false,
+            A2: localStorage.getItem('A2') || false,
+            A: localStorage.getItem('A') || false,
+            B1: localStorage.getItem('B1') || false,
+            B2: localStorage.getItem('B2') || false,
+            B: localStorage.getItem('B') || false,
+            C1: localStorage.getItem('C1') || false,
+            C2: localStorage.getItem('C2') || false,
+            C: localStorage.getItem('C') || false,
+            D1: localStorage.getItem('D1') || false,
+            D2: localStorage.getItem('D2') || false,
+            D: localStorage.getItem('D') || false,
         }
     }
 
-    onA1ValueChange = () => {
+    componentDidMount() {
+        this.onA1ValueChange();
+        this.onA2ValueChange();
+        this.onAValueChange();
+        this.onB1ValueChange();
+        this.onB2ValueChange();
+        this.onBValueChange();
+        this.onC1ValueChange();
+        this.onC2ValueChange();
+        this.onCValueChange();
+        this.onD1ValueChange();
+        this.onD2ValueChange();
+        this.onDValueChange();
+      }
+
+    onA1ValueChange = async() => {
         this.setState({A1: !this.state.A1});
-        localStorage.setItem('A1', this.state.A1)
+        localStorage.setItem('A1', this.state.A1);
+        if(((JSON.parse(localStorage.getItem('A1')) && JSON.parse(localStorage.getItem('A2')))) === true){
+            this.setState({A: true})
+            localStorage.setItem('A', true);
+        }
+        if(JSON.parse(localStorage.getItem('A1')) === false){
+            localStorage.setItem('A', false);
+        }
     }
     onA2ValueChange = () => {
         this.setState({A2: !this.state.A2});
-        localStorage.setItem('A2', this.state.A2)
+        localStorage.setItem('A2', this.state.A2);
+        if(((JSON.parse(localStorage.getItem('A1')) && JSON.parse(localStorage.getItem('A2')))) === true){
+            this.setState({A: true})
+            localStorage.setItem('A', true);
+        }
+        if(JSON.parse(localStorage.getItem('A2')) === false){
+            localStorage.setItem('A', false);
+        }
     }
     onAValueChange = () => {
         this.setState({A1: !this.state.A1, A2: !this.state.A2,A: !this.state.A});
         localStorage.setItem('A', this.state.A);
-        localStorage.setItem('A1', this.state.A1);
-        localStorage.setItem('A2', this.state.A2);
+        localStorage.setItem('A1', this.state.A);
+        localStorage.setItem('A2', this.state.A);
     }
     onB1ValueChange = () => {
         this.setState({B1: !this.state.B1});
-        localStorage.setItem('B1', this.state.B1)
+        localStorage.setItem('B1', this.state.B1);
+        if(((JSON.parse(localStorage.getItem('B1')) && JSON.parse(localStorage.getItem('B2')))) === true){
+            this.setState({B: true})
+            localStorage.setItem('B', true);
+        }
+        if(JSON.parse(localStorage.getItem('B1')) === false){
+            localStorage.setItem('B', false);
+        }
     }
     onB2ValueChange = () => {
         this.setState({B2: !this.state.B2});
-        localStorage.setItem('B2', this.state.B2)
+        localStorage.setItem('B2', this.state.B2);
+        if(((JSON.parse(localStorage.getItem('B1')) && JSON.parse(localStorage.getItem('B2')))) === true){
+            this.setState({B: true})
+            localStorage.setItem('B', true);
+        }
+        if(JSON.parse(localStorage.getItem('B2')) === false){
+            localStorage.setItem('B', false);
+        }
     }
     onBValueChange = () => {
         this.setState({B1: !this.state.B1, B2: !this.state.B2,B: !this.state.B});
         localStorage.setItem('B', this.state.B);
-        localStorage.setItem('B1', this.state.B1);
-        localStorage.setItem('B2', this.state.B2);
+        localStorage.setItem('B1', this.state.B);
+        localStorage.setItem('B2', this.state.B);
     }
     onC1ValueChange = () => {
         this.setState({C1: !this.state.C1});
-        localStorage.setItem('C1', this.state.C1)
+        localStorage.setItem('C1', this.state.C1);
+        if(((JSON.parse(localStorage.getItem('C1')) && JSON.parse(localStorage.getItem('C2')))) === true){
+            this.setState({C: true})
+            localStorage.setItem('C', true);
+        }
+        if(JSON.parse(localStorage.getItem('C1')) === false){
+            localStorage.setItem('C', false);
+        }
     }
     onC2ValueChange = () => {
         this.setState({C2: !this.state.C2});
-        localStorage.setItem('C2', this.state.C2)
+        localStorage.setItem('C2', this.state.C2);
+        if(((JSON.parse(localStorage.getItem('C1')) && JSON.parse(localStorage.getItem('C2')))) === true){
+            this.setState({C: true})
+            localStorage.setItem('C', true);
+        }
+        if(JSON.parse(localStorage.getItem('C2')) === false){
+            localStorage.setItem('C', false);
+        }
     }
     onCValueChange = () => {
         this.setState({C1: !this.state.C1, C2: !this.state.C2,C: !this.state.C});
         localStorage.setItem('C', this.state.C);
-        localStorage.setItem('C1', this.state.C1);
-        localStorage.setItem('C2', this.state.C2);
+        localStorage.setItem('C1', this.state.C);
+        localStorage.setItem('C2', this.state.C);
     }
     onD1ValueChange = () => {
         this.setState({D1: !this.state.D1});
-        localStorage.setItem('D1', this.state.D1)
+        localStorage.setItem('D1', this.state.D1);
+        if(((JSON.parse(localStorage.getItem('D1')) && JSON.parse(localStorage.getItem('D2')))) === true){
+            this.setState({D: true})
+            localStorage.setItem('D', true);
+        }
+        if(JSON.parse(localStorage.getItem('D1')) === false){
+            localStorage.setItem('D', false);
+        }
     }
     onD2ValueChange = () => {
         this.setState({D2: !this.state.D2});
-        localStorage.setItem('D2', this.state.D2)
+        localStorage.setItem('D2', this.state.D2);
+        if(((JSON.parse(localStorage.getItem('D1')) && JSON.parse(localStorage.getItem('D2')))) === true){
+            this.setState({D: true});
+            localStorage.setItem('D', true);
+        }
+        if(JSON.parse(localStorage.getItem('D2')) === false){
+            localStorage.setItem('D', false);
+        }
     }
     onDValueChange = () => {
         this.setState({D1: !this.state.D1, D2: !this.state.D2,D: !this.state.D});
         localStorage.setItem('D', this.state.D);
-        localStorage.setItem('D1', this.state.D1);
-        localStorage.setItem('D2', this.state.D2);
+        localStorage.setItem('D1', this.state.D);
+        localStorage.setItem('D2', this.state.D);
     }
     render() {   
         return (

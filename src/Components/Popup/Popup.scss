@@ -8,8 +8,10 @@
     margin: auto;  
     background-color: rgba(0,0,0, 0.8); 
     border: 1px solid #ed5d56;
+
   }  
   .popup\_inner {  
+    padding-bottom: 50px;
     position: absolute;  
     left: 25%;  
     right: 25%;  
@@ -36,13 +38,20 @@
 .popup-content {
   width: 200%;
 }
-  .popChildren{
-    font-size: 0.7rem;
-  }
 
-  @media (max-width: 400px) {
-    .popChildren{
-      font-size: 11px;
-    }
+.popup-content button{
+ margin: 60px;
+}
+
+
+.popChildren{
+  font-size: 1rem;
+
+}
+
+@media (max-width: 400px) {
+  .popChildren{
+    font-size: 11px;
+  }
 } 
 

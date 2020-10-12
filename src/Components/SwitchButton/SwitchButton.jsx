@@ -14,7 +14,7 @@ export default function SwitchButton(props) {
           height: "100%",
           fontSize: 10,
           color: "white",
-          paddingLeft: 15,
+          paddingLeft: 16,
         }}
       >
         Output
@@ -30,6 +30,7 @@ export default function SwitchButton(props) {
           fontSize: 10,
           color: "white",
           paddingRight: 11,
+          paddingBottom:5
         }}
       >
         Input
@@ -37,8 +38,9 @@ export default function SwitchButton(props) {
         } 
         onColor='#f8c01d'
         offColor='#5095ce'
-        height={18}
-        handleDiameter={16}
+        height={16}
+        width={62}
+        handleDiameter={14}
         disabled={props.disabled}
         checked={props.checked}
         onChange={props.onChange}

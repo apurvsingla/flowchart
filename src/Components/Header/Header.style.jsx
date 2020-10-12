@@ -12,7 +12,7 @@ export const HeaderOptions = styled.div`
     display: flex;
     position: relative;
     justify-content: center;
-    margin-left: 1%;
+    margin-left: 2%;
     @media (max-width: 881px) {
         transform: scale(0.85);
         top: -8px;
@@ -53,7 +53,7 @@ export const HeaderOptions = styled.div`
 
 export const HeaderLinksContainer = styled(NavLink)`
     margin-right: 4px;
-    border: 1px solid #311b92;
+    border: 2px solid #311b92;
     border-radius: 15px;
     text-decoration: none;
     padding: 45px 28px 20px 28px;
@@ -91,7 +91,7 @@ export const HeaderWifiImage = styled.img`
 export const HeaderBackButton = styled.img`
     display: inline-block;
     width: 70px;
-    position: absolute;
+    position: fixed;
     left: 0;
     &:hover {
         opacity: 0.8;

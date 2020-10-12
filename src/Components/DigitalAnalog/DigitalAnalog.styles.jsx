@@ -4,7 +4,6 @@ export const Main = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
     @media (min-height: 900px){
         position: relative;
         top: 200px;

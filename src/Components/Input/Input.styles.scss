@@ -1,21 +1,19 @@
 .flex {
-    width: 54%;
+    width: 58%;
     padding: 12px;
     display: flex;
     justify-content: space-around;
     transform: scale(1.2);
     box-sizing: border-box;
-    position: relative;
-    bottom: 19px;
     height: 80%;
 }
 
 
 .right{
     border: 1px solid #311b92;
-    padding: 0 10px 15px 60px;
+    padding: 0rem 0.7rem 0.8rem 5.5rem;
     margin-left: 4%;
-    max-height: 167px;
+    max-height: 157px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -44,7 +42,7 @@
 .right-upper{
     width: 100%;
     label{
-        padding: 3px;
+        padding: 0px;
     }
 }
 
@@ -56,7 +54,7 @@
 
 .sp{
     position: relative;
-    right: 90px;
+    right: 110px;
     top: 100px;
     display: flex;
     flex-direction: column;
@@ -64,15 +62,18 @@
     font-weight: 600;
     color: white;
     
-    label{
-        position: relative;
-        left: 10px;
-    }
 }
+
 
 .upper-label-input>span, .lower-label-input>span{
     position: relative;
     top: 3px;
+}
+
+
+.lower{
+    position: relative;
+    left: -1px
 }
 
 .lower-label-input>span{
@@ -80,10 +81,16 @@
     top: 2px;
 }
 
-// .ADSwitch{
-//     position: relative;
-//     right: 5px;
-// }
+.input-left>.ls{
+    position: relative;
+    left:10px;
+}
+
+.input-bd>.ls{
+    position: relative;
+    left: 8px;
+}
+
 
 .circle{
     appearance: none;
@@ -103,20 +110,24 @@
 }
 
 .spicircle{
-    left: 3px;
+    left: -8px;
 }
 
 .right-lower, .right-upper {
     position: relative;
-    top: -7px;
-    padding: 10px;
+    top: -8px;
+    padding: 11px;
+    text-align: center;
     border-radius: 15px;
 }
 
 .left-upper, .left-lower{
-    padding: 20px;
+    padding: 10px;
+    padding-left: 0;
+    padding-right: 0;
     border-radius: 20px;
-    width: 90px;
+    width: 120px;
+    text-align: center;
 }
 
 .input-bd{
@@ -131,7 +142,7 @@
 
 .upper-label-input>span{
     position: relative;
-    right: 1px;
+    right: 3px;
 }
 
 .input-bd>span{
@@ -139,6 +150,13 @@
     left: 0;
 }
 
+.falseinput{
+    color: #d3d2d2;
+}
+
+.falsetext-circle{
+    color: #d3d2d2;
+}
 
 .I2c{
     display: flex;
@@ -165,45 +183,40 @@
 
 
 .activatedUart{
-    border: 1px solid #311b92;
-    background-color: #311b92;
     color: white;
-    min-height: 40%;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
-
-    span{
-        text-align: center;
-        position: relative;
-        top: 5px;
-    }
-    .arrangecircle{
-        top: 15px;
-        position: relative;
-        left: 45px;
-    }
+   border: 1px solid #311b92;
+   background-color: #311b92;
+   padding: 5px;
+   min-width: 100px;
+   min-height: 120px;
+   border-radius: 20px;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   span{
+       text-align: center;
+   }
 }
 
 .activatedSp1{
    color: white;
+   border: 1px solid #311b92;
+   background-color: #311b92;
+   padding: 1.7rem;
+   margin-left: 10px;
+   min-width: 100px;
+   min-height: 157px;
+   border-radius: 20px;
    display: flex;
    flex-direction: column;
-    span{
-        position: relative;
-        top: -20px;
-        right: 20px;
-        font-size: 1.5rem;
-        text-align: center;
-    }
-   .arrangecircleSp1{
-       margin: auto;
-       position: relative;
-       right: 20px;
+   justify-content: center;
+   align-items: center;
+   span{
+       text-align: center;
    }
 }
+
 
 
 .exLower{
@@ -220,8 +233,7 @@
     border-radius: 20px;
     font-size: 0.5rem;
     font-weight: normal;
-    padding: 30px;
-    padding-left: 10px;
+    padding: 30px 31px 31px 10px;
     position: relative;
     left: 9px;
     overflow: hidden;
@@ -249,6 +261,13 @@
         bottom: 0;
     }
 }
+
+@media (max-width: 600px){
+    .right-lower, .right-upper {
+        padding: 6px 11px;
+    }
+}
+
 @media (max-width: 575px) {
     .activatedI2c{
         width: 100%;

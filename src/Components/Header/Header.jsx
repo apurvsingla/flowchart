@@ -4,12 +4,13 @@ import {withRouter, useHistory} from 'react-router-dom';
 import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
 
-import {HeaderContainer,
+import {
+HeaderContainer,
 HeaderOptions, 
 HeaderLinksContainer,
 HeaderWifiImage,
 HeaderBackButton, 
-HeaderHelp,
+// HeaderHelp,
 } from './Header.style';
 
 import './Header.scss';
@@ -110,8 +111,8 @@ const Header = () => {
                     <HeaderWifiImage src={process.env.PUBLIC_URL + '/images/header/bluetooth_inactive.png'}  alt="logo"/>
                     
                     </HeaderOptions>
-                    <HeaderHelp src={process.env.PUBLIC_URL + '/images/login/button_help.png'}
-                     alt="back" width="90"/>
+                    {/* <HeaderHelp src={process.env.PUBLIC_URL + '/images/login/button_help.png'}
+                     alt="back" width="90"/> */}
                     
                 
             </HeaderContainer>

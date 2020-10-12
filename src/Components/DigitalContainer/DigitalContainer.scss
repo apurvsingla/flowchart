@@ -25,10 +25,15 @@
 }
 
 
-.upper-digital>label{
+.upper-digital{
     position: relative;
-    right: 1px;
+    left: 2px;
     top: 2px;
+    
+    label{
+        position: relative;
+        left: -1px;
+    }
 }
 
 .right-uart{
@@ -41,16 +46,24 @@
 }
 
 .true{
-    background-color: #6f6f6f;
+    background-color: green;
 }
 
 .false{
     background-color: #d3d2d2;
 }
 
-.left-uart-para{
+.trueinput-text{
+    color: #d3d2d2;
     position: relative;
-    right: 1px;
+    top: 1px;
 }
+
+.falseinput-text{
+    position: relative;
+    top: 1px;
+}
+
+
 
 

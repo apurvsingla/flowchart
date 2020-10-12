@@ -15,8 +15,20 @@ const PopupMenu = ({open, close, children, click, onActivation, onDeactivation})
                     <br/>
                     <span className="popChildren"> {children} </span>
                     <br/>
-                    <button onClick={onActivation}>Yes</button>
-                    <button onClick={onDeactivation}>No</button>
+                    <span style={{
+                        display: 'flex',
+                        justifyContent: 'center',
+                        textAlign: 'center',
+                    }}>
+                    <button onClick={onActivation} style={{
+                        width: '100px',
+                        borderRadius: '20px'
+                    }}>Yes</button>
+                    <button onClick={onDeactivation} style={{
+                        width: '100px',
+                        borderRadius: '20px'
+                    }}>No</button>
+                    </span>
                     </div>
             </Popup>
     );

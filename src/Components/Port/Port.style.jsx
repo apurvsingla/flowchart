@@ -5,19 +5,30 @@ export const MainContainer = styled.div`
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
+    position: relative;
     @media (max-width: 624px) {
+        transform: scale(0.9);
+    }
+    @media (max-width: 584px) {
+        transform: scale(0.8);
+    }
+    @media (max-width: 500px) {
         transform: scale(0.7);
     }
-    @media (max-width: 420px){
+    @media (max-width: 424px){
         transform: scale(0.65);
     }
     @media (max-width: 388px){
         transform: scale(0.55);
+        bottom: 80px;
+    }  
+    @media (max-width: 320px){
+        transform: scale(0.5);
     }     
-    @media (min-height: 1100px){
-        position: relative;
-        top: 200px;
-    } 
+    @media (min-height: 900px){
+        transform: scale(1);
+        top: 150px;
+    }   
 `;
 
 export const ButtonBackground = styled.div`
