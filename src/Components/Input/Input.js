@@ -61,9 +61,9 @@ class InputOutput extends Component {
         })
     }
 
-    activateModalUart= () =>{
+    activateModalUart = () =>{
         this.setState({uart: true, showPopupUart: false});
-        localStorage.setItem('uart', !this.state.uart)
+        localStorage.setItem('uart', !this.state.uart);
         this.closeModalUart();
     }
     
@@ -74,7 +74,7 @@ class InputOutput extends Component {
 
     toggleUart = () =>{
         this.setState({uart: !this.state.uart, showPopupUart: false});
-        localStorage.setItem('uart', !this.state.uart)
+        localStorage.setItem('uart', !this.state.uart);
     }
 
     activateModalSp1 = () =>{
@@ -90,12 +90,12 @@ class InputOutput extends Component {
 
     toggleSp1 = () =>{
         this.setState({sp: !this.state.sp, showPopupSp1: false});
-        localStorage.setItem('sp1', !this.state.sp)
+        localStorage.setItem('sp1', !this.state.sp);
     }
 
     activateModalI2c = () =>{
         this.setState({i2c: true, showPopupI2c: false});
-        localStorage.setItem('i2c', !this.state.i2c)
+        localStorage.setItem('i2c', !this.state.i2c);
         this.closeModalUart();
     }
     
@@ -106,45 +106,45 @@ class InputOutput extends Component {
 
     toggleI2c = () => {
         this.setState({i2c: !this.state.i2c, showPopupSp1: false});
-        localStorage.setItem('i2c', !this.state.i2c)
+        localStorage.setItem('i2c', !this.state.i2c);
     }
 
 
     a1CheckedState = () => {
-        this.setState({A1Checked: !this.state.A1Checked})
-        localStorage.setItem("a1-I/O", this.state.A1Checked);
+        this.setState({A1Checked: !this.state.A1Checked});
+        localStorage.setItem("a1-I/O", !this.state.A1Checked);
     }
 
     b1CheckedState = () => {
-        this.setState({B1Checked: !this.state.B1Checked})
-        localStorage.setItem("b1-I/O", this.state.B1Checked);
+        this.setState({B1Checked: !this.state.B1Checked});
+        localStorage.setItem("b1-I/O", !this.state.B1Checked);
     }
 
     b2CheckedState = () => {
-        this.setState({B2Checked: !this.state.B2Checked})
-        localStorage.setItem("b2-I/O", this.state.B2Checked);
+        this.setState({B2Checked: !this.state.B2Checked});
+        localStorage.setItem("b2-I/O", !this.state.B2Checked);
     }
 
 
     d1CheckedState = () => {
-        this.setState({D1Checked: !this.state.D1Checked})
-        localStorage.setItem("d1-I/O", this.state.D1Checked);
+        this.setState({D1Checked: !this.state.D1Checked});
+        localStorage.setItem("d1-I/O", !this.state.D1Checked);
     }
 
-    d2CheckedState = () => {
-        this.setState({D2Checked: !this.state.D2Checked})
-        localStorage.setItem("d2-I/O", this.state.D2Checked);
+    d2CheckedState = async () => {
+        this.setState({D2Checked: !this.state.D2Checked});
+        localStorage.setItem("d2-I/O", !this.state.D2Checked);
     }
     
     onSpiCircleClick = () => {
         if((this.state.C1 && this.state.C2) && (this.state.D1 && this.state.D2)){
-            this.setState({showPopupSp1: !this.state.showPopupSp1})
+            this.setState({showPopupSp1: !this.state.showPopupSp1});
         }
     }
     
     onUartCircleChange = () => {
         if(this.state.B1 && this.state.B2){
-            this.setState({showPopupUart: !this.state.showPopupUart})
+            this.setState({showPopupUart: !this.state.showPopupUart});
         }
     }
 
@@ -203,7 +203,7 @@ class InputOutput extends Component {
                                 B1</span>
             <SwitchButton 
             disabled={!this.state.B1}
-            checked={JSON.parse(localStorage.getItem('b1-I/O')) || false}
+            checked={JSON.parse(localStorage.getItem('b1-I/O')) || this.state.B1Checked}
             onChange={this.b1CheckedState}
             />
             </label>
@@ -211,7 +211,7 @@ class InputOutput extends Component {
                <span> B2</span>
                 <SwitchButton 
                 disabled={!this.state.B2}
-                checked={JSON.parse(localStorage.getItem('b2-I/O')) || false}
+                checked={JSON.parse(localStorage.getItem('b2-I/O')) || this.state.B2Checked}
                 onChange={this.b2CheckedState}
                 />
             </label>
@@ -290,7 +290,7 @@ class InputOutput extends Component {
                                 C1</span>
                 <SwitchButton 
                 disabled={!this.state.C1}
-                checked={this.state.C1Checked}
+                checked={JSON.parse(localStorage.getItem('c1-I/O')) || this.state.C1Checked}
                 onChange={() => true}
                 />
             </label>
@@ -298,7 +298,7 @@ class InputOutput extends Component {
                <span> C2</span>
                 <SwitchButton 
                 disabled={!this.state.C2}
-                checked={this.state.C2Checked}
+                checked={JSON.parse(localStorage.getItem('c2-I/O')) || this.state.C2Checked}
                 onChange={() => true}
                 />
             </label>
@@ -321,7 +321,7 @@ class InputOutput extends Component {
                                 D1</span>
                 <SwitchButton
                 disabled={!this.state.D1}
-                checked={JSON.parse(localStorage.getItem('d1-I/O')) || false}
+                checked={JSON.parse(localStorage.getItem('d1-I/O')) || this.state.D1Checked}
                 onChange={this.d1CheckedState}
                 />
             </label>
@@ -329,7 +329,7 @@ class InputOutput extends Component {
                <span> D2 </span>
                 <SwitchButton className="ADSwitch"
                 disabled={!this.state.D2}
-                checked={JSON.parse(localStorage.getItem('d2-I/O')) || false}
+                checked={JSON.parse(localStorage.getItem('d2-I/O')) || this.state.D2Checked}
                 onChange={this.d2CheckedState}
                 />
             </label>
@@ -352,14 +352,14 @@ class InputOutput extends Component {
                                 </span>
                                 <SwitchButton  
                                 disabled={!this.state.A1}
-                                checked={JSON.parse(localStorage.getItem('a1-I/O')) || false}
+                                checked={JSON.parse(localStorage.getItem('a1-I/O')) || this.state.A1Checked}
                                 onChange={this.a1CheckedState}/>
                             </label>
                             <label className={this.state.A2 +"input lower-label-input input-left"}>
                                <span> A2 </span>
                                 <SwitchButton
                                 disabled={!this.state.A2}
-                                checked={this.state.A2Checked}
+                                checked={JSON.parse(localStorage.getItem('a2-I/O')) || this.state.A2Checked}
                                 onChange={() => true}
                                 />
                             </label>

@@ -111,6 +111,10 @@ const Port = () => {
         localStorage.setItem('D1', d);
         localStorage.setItem('D2', d);
     }  
+    // React.useEffect(() => {
+    //     localStorage.setItem('D', d);
+    // }, [d]);
+    
         return (
             <>
             <MainContainer>

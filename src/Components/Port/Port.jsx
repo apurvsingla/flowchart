@@ -45,6 +45,7 @@ class Port extends Component {
         this.onD2ValueChange();
         this.onDValueChange();
       }
+      
 
     onA1ValueChange = async() => {
         this.setState({A1: !this.state.A1});

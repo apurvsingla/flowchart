@@ -36,7 +36,7 @@
 }
 
 .popup-content {
-  width: 200%;
+  height: 220px !important;
 }
 
 .popup-content button{
@@ -49,9 +49,9 @@
 
 }
 
-@media (max-width: 400px) {
-  .popChildren{
-    font-size: 11px;
-  }
-} 
+// @media (max-width: 400px) {
+//   .popChildren{
+//     font-size: 11px;
+//   }
+// } 
 

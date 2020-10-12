@@ -42,7 +42,7 @@ class DigitalAnalog extends Component {
         }
     }
 
-     toggleA1 = () => {
+    toggleA1 = () => {
         localStorage.setItem('A1DIGI', false)
     }
     toggleA2 = () => {
@@ -68,7 +68,7 @@ class DigitalAnalog extends Component {
     toggleD1 = () => {
         localStorage.setItem('D1DIGI', false)
     }
-    toggleD2 = () => {
+    toggleD2 = async () => {
         this.setState({D2: !this.state.D2});
         localStorage.setItem('D2DIGI', !this.state.D2)
     }
