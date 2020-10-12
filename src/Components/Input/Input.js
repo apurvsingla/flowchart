@@ -290,7 +290,7 @@ class InputOutput extends Component {
                                 C1</span>
                 <SwitchButton 
                 disabled={!this.state.C1}
-                checked={JSON.parse(localStorage.getItem('c1-I/O')) || this.state.C1Checked}
+                checked={this.state.C1Checked}
                 onChange={() => true}
                 />
             </label>
@@ -298,7 +298,7 @@ class InputOutput extends Component {
                <span> C2</span>
                 <SwitchButton 
                 disabled={!this.state.C2}
-                checked={JSON.parse(localStorage.getItem('c2-I/O')) || this.state.C2Checked}
+                checked={this.state.C2Checked}
                 onChange={() => true}
                 />
             </label>
