@@ -4,7 +4,9 @@ ButtonBackground,
 ButtonDiv,
 InputCheckBox,
 InputLabel,
-SwitchButton
+SwitchButton,
+CenterImg,
+ButtonRightDiv
 } from './Port.style';
 import BottomContainer from '../BottomContainer/BottomContainer';
 import {useLocalStorage} from '../LocalStorage/LocalStorage';
@@ -175,11 +177,11 @@ const Port = () => {
                     </ButtonBackground>
                 </ButtonDiv>
 
-                <div className='center-image'>
+                <CenterImg>
                     <img src={process.env.PUBLIC_URL + '/images/login/illus_ace.png'}  alt="logo" width="280"/>
-                </div>
+                </CenterImg>
 
-                <div className='right-main'>
+                <ButtonRightDiv>
                     <ButtonBackground>
                         <InputLabel>
                             C1
@@ -218,7 +220,7 @@ const Port = () => {
                         height={20}
                         handleDiameter={18}/>
                     </ButtonBackground>
-                </div>
+                </ButtonRightDiv>
                 
             </MainContainer>
             <br/>

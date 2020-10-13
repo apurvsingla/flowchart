@@ -41,7 +41,7 @@ export default function SwitchDigital(props) {
         onColor='#f8c01d'
         offColor='#5095ce'
         height={22}
-        width={60}
+        width={65}
         handleDiameter={20}
         disabled={props.disabled}
         checked={props.checked || props.checked1 || false}

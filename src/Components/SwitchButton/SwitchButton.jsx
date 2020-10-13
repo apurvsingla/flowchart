@@ -42,9 +42,10 @@ export default function SwitchButton(props) {
         } 
         onColor='#f8c01d'
         offColor='#5095ce'
+        offHandleColor={props.removeButton ?'#5095ce' : '#fff'}
         height={16}
         width={62}
-        handleDiameter={14}
+        handleDiameter={props.removeButton ? 1 : 14}
         disabled={props.disabled}
         checked={props.checked}
         onChange={props.onChange}

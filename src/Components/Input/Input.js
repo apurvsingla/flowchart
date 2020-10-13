@@ -152,7 +152,8 @@ function InputOutput(){
             onActivation={activateModalUart}
             onDeactivation={deactivateModalUart}
                 >
-                <span> Activating the UART protocol will enable the B port</span>
+                <span> Activating the UART protocol will <br/> enable the B port</span>
+                <br/>
                 <br/>
                 <span>  Continue? </span>
                 <br/>
@@ -160,8 +161,7 @@ function InputOutput(){
     }
     if(uart){
         UART = (<div className="activatedUart">
-                    <span> UART protocol activated</span>
-                    <br/>
+                    <span> UART protocol <br/> activated</span>
                     <input type="checkbox" className="circle arrangecircle" 
                     onChange={toggleUart}
                     checked={uart} />
@@ -207,7 +207,8 @@ function InputOutput(){
             onActivation={activateModalI2c}
             onDeactivation={deactivateModalI2c}
                 >
-                <span>Activating the I2C protocol will enable the D port</span>
+                <span>Activating the I2C protocol will <br/> enable the D port</span>
+                <br/>
                 <br/>
                 <span> Continue? </span>
                 <br/>
@@ -217,13 +218,11 @@ function InputOutput(){
 
     if(i2c){
         I2c = (<div className="right-lower exLower">
-        <div className="activatedI2c">
-        <span> I2C protocol activated</span>
+        <span> I2C protocol <br/> activated</span>
             <input type="checkbox" className="circle arrangecircleI2c"  
             onChange={toggleI2c}
             checked={i2c} />
             {showPopupI2c ? buttonModalI2c : null}
-        </div>
     </div>)
     }
 
@@ -236,7 +235,8 @@ function InputOutput(){
             onActivation={activateModalSp1}
             onDeactivation={deactivateModalSp1}
                 >
-                <span>  Activating the SPI protocol will enable the C and D ports </span>
+                <span>  Activating the SPI protocol will <br/> enable the C and D ports </span>
+                <br/>
                 <br/>
                 <span>  Continue?</span>
                 <br/>
@@ -273,12 +273,14 @@ function InputOutput(){
             disabled={!C1}
             checked={c1Checked}
             onChange={() => true}
+            removeButton={true}
             />
         </label>
         <label className={C2 + "input lower-label-input input-bd"}>
             <span> C2</span>
             <SwitchButton 
             disabled={!C2}
+            removeButton={true}
             checked={c2Checked}
             onChange={() => true}
             />
@@ -327,7 +329,6 @@ function InputOutput(){
                     <div className="left">
                         <div className="left-upper">
                             <label className={A1 + "input upper-label-input"}>
-                            <br/>
                                 <span>
                                     A1
                                 </span>
@@ -342,6 +343,7 @@ function InputOutput(){
                                 disabled={!A2}
                                 checked={a2Checked}
                                 onChange={() => true}
+                                removeButton={true}
                                 />
                             </label>
                         </div>

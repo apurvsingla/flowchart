@@ -4,7 +4,6 @@ export const MainContainer = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    box-sizing: border-box;
     position: relative;
     @media (max-width: 624px) {
         transform: scale(0.9);
@@ -37,11 +36,49 @@ export const ButtonBackground = styled.div`
     margin: 12px;
     border-radius: 35px;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
+    width: 100%;
 `;
 
 export const ButtonDiv = styled.div`
-    padding: 5px;
+    position: relative;
+    top: 23px;
+    right: 50px;
+    @media (max-width: 810px){
+        right: 45px;
+    }
+    @media (max-width: 715px){
+        right: 20px;
+    }
+    @media (max-width: 500px){
+        right: 20px;
+    }
+`;
+
+export const ButtonRightDiv = styled.div`
+    position: relative;
+    top: 23px;
+    @media (max-width: 810px){
+        right: 45px;
+    }
+    @media (max-width: 715px){
+        right: 20px;
+    }
+    @media (max-width: 500px){
+        right: 20px;
+    }
+`;
+
+export const CenterImg = styled.div`
+    display: flex;
+    position: relative;
+    @media (max-width: 810px){
+        transform: scale(0.8);
+        right: 22px;
+    }
+    @media (max-width: 710px){
+        left: 5px;
+    }
 `;
 
 export const InputLabel = styled.label`

@@ -6,7 +6,7 @@ const PopupMenu = ({open, close, children, click, onActivation, onDeactivation})
     return (
         <Popup open={open}
                 closeOnDocumentClick={false} 
-                onClose={close}>
+                onClose={close} style={{maxWidth: '400px'}}>
                     <div className="modal">
                     <span className="close" 
                         onClick={click}>
