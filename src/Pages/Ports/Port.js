@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Port from '../../Components/Port/Port.jsx';
+import Port from '../../Components/Port/Port.js';
 
 class Ports extends Component {
     render() {

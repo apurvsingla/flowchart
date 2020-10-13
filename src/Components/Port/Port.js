@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {MainContainer, 
 ButtonBackground, 
 ButtonDiv,
@@ -7,114 +7,128 @@ InputLabel,
 SwitchButton
 } from './Port.style';
 import BottomContainer from '../BottomContainer/BottomContainer';
+import {useLocalStorage} from '../LocalStorage/LocalStorage';
 
 const Port = () => {
-    const [a1, setA1] = useState(false);
-    const [a2, setA2] = useState(false);
-    const [a, setA] = useState(false);
-    const [b1, setB1] = useState(false);
-    const [b2, setB2] = useState(false);
-    const [b, setB] = useState(false);
-    const [c1, setC1] = useState(false);
-    const [c2, setC2] = useState(false);
-    const [c, setC] = useState(false);
-    const [d1, setD1] = useState(false);
-    const [d2, setD2] = useState(false);
-    const [d, setD] = useState(false);
-    
+    const [a1, setA1] = useLocalStorage('A1', false);
+    const [a2, setA2] = useLocalStorage('A2',false);
+    const [a, setA] = useLocalStorage('A',false);
+    const [b1, setB1] = useLocalStorage('B1',false);
+    const [b2, setB2] = useLocalStorage('B2',false);
+    const [b, setB] = useLocalStorage('B',false);
+    const [c1, setC1] = useLocalStorage('C1',false);
+    const [c2, setC2] = useLocalStorage('C2',false);
+    const [c, setC] = useLocalStorage('C',false);
+    const [d1, setD1] = useLocalStorage('D1',false);
+    const [d2, setD2] = useLocalStorage('D2',false);
+    const [d, setD] = useLocalStorage('D',false);
 
-    const onA1ValueChange = () => {
+    
+    const onA1ValueChange = async () => {
         setA1(!a1);
-        localStorage.setItem('A1', a1);
-        if(JSON.parse(localStorage.getItem('A1')) === false){
-            localStorage.setItem('A', false);
+        if((a1 === false) && (a2 === true)){
+            setA(true);
+        }else{
+            setA(false);
         }
     }
+
     const onA2ValueChange = () => {
         setA2(!a2);
-        localStorage.setItem('A2', a2);
-        if(JSON.parse(localStorage.getItem('A2')) === false){
-            localStorage.setItem('A', false);
+        if((a1 === true) && (a2 === false)){
+            setA(true);
+        }else{
+            setA(false);
         }
     }
     const onAValueChange = () => {
+        if((a1 === false) || (a2 === false)){
+            setA1(true);
+            setA2(true);
+        }else{
+            setA1(false);
+            setA2(false);
+        }
         setA(!a);
-        setA2(!a2);
-        setA(!a);
-        localStorage.setItem('A', a);
-        localStorage.setItem('A1', a);
-        localStorage.setItem('A2', a);
     }
     const onB1ValueChange = () => {
         setB1(!b1);
-        localStorage.setItem('B1', b1);
-        if(JSON.parse(localStorage.getItem('B1')) === false){
-            localStorage.setItem('B', false);
+        if((b1 === false) && (b2 === true)){
+            setB(true);
+        }else{
+            setB(false);
         }
     }
     const onB2ValueChange = () => {
         setB2(!b2);
-        localStorage.setItem('B2', b2);
-        if(JSON.parse(localStorage.getItem('B2')) === false){
-            localStorage.setItem('B', false);
+        if((b1 === true) && (b2 === false)){
+            setB(true);
+        }else{
+            setB(false);
         }
     }
     const onBValueChange = () => {
-        setB1(!b1);
-        setB2(!b2);
+        if((b1 === false) || (b2 === false)){
+            setB1(true);
+            setB2(true);
+        }else{
+            setB1(false);
+            setB2(false);
+        }
         setB(!b);
-        localStorage.setItem('B', b);
-        localStorage.setItem('B1', b);
-        localStorage.setItem('B2', b);
     }
     const onC1ValueChange = () => {
         setC1(!c1);
-        localStorage.setItem('C1', c1);
-        if(JSON.parse(localStorage.getItem('C1')) === false){
-            localStorage.setItem('C', false);
+        if((c1 === false) && (c2 === true)){
+            setC(true);
+        }else{
+            setC(false);
         }
     }
     const onC2ValueChange = () => {
         setC2(!c2);
-        localStorage.setItem('C2', c2);
-        if(JSON.parse(localStorage.getItem('C2')) === false){
-            localStorage.setItem('C', false);
+        if((c1 === true) && (c2 === false)){
+            setC(true);
+        }else{
+            setC(false);
         }
     }
     const onCValueChange = () => {
-        setC1(!c1);
-        setC2(!c2);
+        if((c1 === false) || (c2 === false)){
+            setC1(true);
+            setC2(true);
+        }else{
+            setC1(false);
+            setC2(false);
+        }
         setC(!c);
-        localStorage.setItem('C', c);
-        localStorage.setItem('C1', c);
-        localStorage.setItem('C2', c);
     }
     const onD1ValueChange = () => {
         setD1(!d1);
-        localStorage.setItem('D1', d1);
-        if(JSON.parse(localStorage.getItem('D1')) === false){
-            localStorage.setItem('D', false);
+        if((d1 === false) && (d2 === true)){
+            setD(true);
+        }else{
+            setD(false);
         }
     }
     const onD2ValueChange = () => {
         setD2(!d2);
-        localStorage.setItem('D2', d2);
-        if(JSON.parse(localStorage.getItem('D2')) === false){
-            localStorage.setItem('D', false);
+        if((d1 === true) && (d2 === false)){
+            setD(true);
+        }else{
+            setD(false);
         }
     }
     const onDValueChange = () => {
-        setD1(!d1);
-        setD2(!d2);
+        if((d1 === false) || (d2 === false)){
+            setD1(true);
+            setD2(true);
+        }else{
+            setD1(false);
+            setD2(false);
+        }
         setD(!d);
-        localStorage.setItem('D', d);
-        localStorage.setItem('D1', d);
-        localStorage.setItem('D2', d);
-    }  
-    // React.useEffect(() => {
-    //     localStorage.setItem('D', d);
-    // }, [d]);
-    
+    }      
         return (
             <>
             <MainContainer>
@@ -123,19 +137,19 @@ const Port = () => {
                         <InputLabel>
                             A1
                             <InputCheckBox type="checkbox" 
-                            checked={JSON.parse(localStorage.getItem('A1')) || false}
+                            checked={a1}
                             onChange={() => onA1ValueChange()}/>
                         </InputLabel>
                         <InputLabel>
                             A2
                             <InputCheckBox type="checkbox" 
-                            checked={JSON.parse(localStorage.getItem('A2')) || false}
+                            checked={a2}
                             onChange={() => onA2ValueChange()}/>
                         </InputLabel>
                         <SwitchButton type="checkbox" 
                         checkedIcon={false} 
                         uncheckedIcon={false}
-                        checked={JSON.parse(localStorage.getItem('A')) || false}
+                        checked={a}
                         onChange={() => onAValueChange()}
                         height={20}
                         handleDiameter={18}/>
@@ -144,17 +158,17 @@ const Port = () => {
                         <InputLabel>
                             B1
                             <InputCheckBox type="checkbox" 
-                            checked={JSON.parse(localStorage.getItem('B1')) || false}
+                            checked={b1}
                             onChange={() => onB1ValueChange()}/>
                         </InputLabel>
                         <InputLabel>
                             B2
                             <InputCheckBox type="checkbox" 
-                            checked={JSON.parse(localStorage.getItem('B2')) || false}
+                            checked={b2}
                             onChange={() => onB2ValueChange()}/>
                         </InputLabel>
                         <SwitchButton type="checkbox" checkedIcon={false} uncheckedIcon={false}
-                        checked={JSON.parse(localStorage.getItem('B')) || false}
+                        checked={b}
                         onChange={() => onBValueChange()}
                             height={20}
                             handleDiameter={18}/>
@@ -170,17 +184,17 @@ const Port = () => {
                         <InputLabel>
                             C1
                             <InputCheckBox type="checkbox" 
-                            checked={JSON.parse(localStorage.getItem('C1')) || false}
+                            checked={c1}
                             onChange={() => onC1ValueChange()}/>
                         </InputLabel>
                         <InputLabel>
                             C2
                             <InputCheckBox type="checkbox" 
-                            checked={JSON.parse(localStorage.getItem('C2')) || false}
+                            checked={c2}
                             onChange={() => onC2ValueChange()}/>
                         </InputLabel>
                         <SwitchButton type="checkbox" checkedIcon={false} uncheckedIcon={false}
-                        checked={JSON.parse(localStorage.getItem('C')) || false}
+                        checked={c}
                         onChange={() => onCValueChange()}
                             height={20}
                             handleDiameter={18}/>
@@ -189,17 +203,17 @@ const Port = () => {
                         <InputLabel>
                             D1
                             <InputCheckBox type="checkbox" 
-                            checked={JSON.parse(localStorage.getItem('D1')) || false}
+                            checked={d1}
                             onChange={() => onD1ValueChange()}/>
                         </InputLabel>
                         <InputLabel>
                             D2
                             <InputCheckBox type="checkbox" 
-                            checked={JSON.parse(localStorage.getItem('D2')) || false}
+                            checked={d2}
                             onChange={() => onD2ValueChange()}/>
                         </InputLabel>
                         <SwitchButton type="checkbox" checkedIcon={false} uncheckedIcon={false}
-                        checked={JSON.parse(localStorage.getItem('D')) || false}
+                        checked={d}
                         onChange={() => onDValueChange()}
                         height={20}
                         handleDiameter={18}/>

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import InputOutput from '../../Components/Input/Input';
+import InputOutput from '../../Components/Input/Input.js';
 
 class Input extends Component {
     render() {

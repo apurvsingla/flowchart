@@ -11,7 +11,7 @@
 
 .right{
     border: 1px solid #311b92;
-    padding: 0rem 0.7rem 0.8rem 5.5rem;
+    padding: 0rem 0.67rem 0.8rem 5.5rem;
     margin-left: 4%;
     max-height: 157px;
     display: flex;
@@ -138,6 +138,14 @@
 .input-left{
     position: relative;
     right: 6px;
+}
+.input-D2{
+    position: relative;
+    right: 7px;
+    span{
+        position: relative;
+        left: 6px;
+    }
 }
 
 .upper-label-input>span{

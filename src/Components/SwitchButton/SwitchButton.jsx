@@ -16,7 +16,7 @@ export default function SwitchButton(props) {
           color: "white",
           paddingLeft: 16,
           position: "relative",
-          bottom: '1px'
+          bottom: '3.5%'
         }}
       >
         Output
@@ -34,7 +34,7 @@ export default function SwitchButton(props) {
           paddingRight: 11,
           paddingBottom:5,
           position: "relative",
-          bottom: '1px'
+          bottom: '8%'
         }}
       >
         Input

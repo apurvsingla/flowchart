@@ -1,343 +1,324 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import {MainInputComponent} from './Input.styles';
 import SwitchButton from '../SwitchButton/SwitchButton';
 import BottomContainer from '../BottomContainer/BottomContainer';
 import PopupMenu from '../Popup/Popup.jsx';
 import './Input.styles.scss';
+import useLocalStorage from '../LocalStorage/LocalStorage';
 
-class InputOutput extends Component {
-    constructor(props){
-        super(props);
-        const A1 = JSON.parse(localStorage.getItem('A1'));
-        const A2 = JSON.parse(localStorage.getItem('A2'));
-        const B1 = JSON.parse(localStorage.getItem('B1'));
-        const B2 = JSON.parse(localStorage.getItem('B2'));
-        const C1 = JSON.parse(localStorage.getItem('C1'));
-        const C2 = JSON.parse(localStorage.getItem('C2'));
-        const D1 = JSON.parse(localStorage.getItem('D1'));
-        const D2 = JSON.parse(localStorage.getItem('D2'));
-        this.state = {
-            A1: A1|| false,
-            A2: A2|| false,
-            B1: B1|| false,
-            B2: B2|| false,
-            C1: C1|| false,
-            C2: C2|| false,
-            D1: D1|| false,
-            D2: D2|| false,
-            A1Checked: false,
-            A2Checked: false,
-            B1Checked: false,
-            B2Checked: false,
-            C1Checked: false,
-            C2Checked: false,
-            D1Checked: false,
-            D2Checked: false,
-            uart: false,
-            sp: false,
-            i2c: false,
-            showPopupUart: false,
-            showPopupSp1: false,
-            showPopupI2c: false,
-            spinner: false
-        }
-    }
+function InputOutput(){
+    const A1 = JSON.parse(localStorage.getItem('A1'));
+    const A2 = JSON.parse(localStorage.getItem('A2'));
+    const B1 = JSON.parse(localStorage.getItem('B1'));
+    const B2 = JSON.parse(localStorage.getItem('B2'));
+    const C1 = JSON.parse(localStorage.getItem('C1'));
+    const C2 = JSON.parse(localStorage.getItem('C2'));
+    const D1 = JSON.parse(localStorage.getItem('D1'));
+    const D2 = JSON.parse(localStorage.getItem('D2'));
+    
+    const [a1Checked, setA1Checked] = useLocalStorage('a1-I/O', false);
+    const [a2Checked] = useLocalStorage('a2-I/O', false);
+    const [b1Checked, setB1Checked] = useLocalStorage('b1-I/O', false);
+    const [b2Checked, setB2Checked] = useLocalStorage('b2-I/O', false);
+    const [c1Checked] = useLocalStorage('c1-I/O', false);
+    const [c2Checked] = useLocalStorage('c2-I/O', false);
+    const [d1Checked, setD1Checked] = useLocalStorage('d1-I/O', false);
+    const [d2Checked, setD2Checked] = useLocalStorage('d2-I/O', false);
 
-    closeModalUart = () => {  
-        this.setState({  
-            showPopupUart: false  
-        });  
+    const [uart, setUart] = useLocalStorage('uart', false);
+    const [spi, setSpi] = useLocalStorage('spi', false);
+    const [i2c, setI2c] = useLocalStorage('i2c', false);
+
+    const [showPopupUart, setShowPopupUart] = useState(false);
+    const [showPopupSpi, setShowPopupSpi] = useState(false);
+    const [showPopupI2c, setShowPopupI2c] = useState(false);
+
+    const closeModalUart = () => {  
+        setShowPopupUart(false); 
     }  
 
-    closeModalSp1 = () => {
-        this.setState({
-            showPopupSp1: false
-        })
+    const closeModalSp1 = () => {
+        setShowPopupSpi(false); 
     }
 
-    closeModalI2c = () => {
-        this.setState({
-            showPopupI2c: false
-        })
+    const closeModalI2c = () => {
+        setShowPopupI2c(false); 
     }
 
-    activateModalUart = () =>{
-        this.setState({uart: true, showPopupUart: false});
-        localStorage.setItem('uart', !this.state.uart);
-        this.closeModalUart();
+    const activateModalUart = () =>{
+        setUart(true);
+        setShowPopupUart(false);
+        closeModalUart();
     }
     
-    deactivateModalUart = () => {
-        this.setState({uart: false, showPopupUart: false});
-        this.closeModalUart();
+    const deactivateModalUart = () => {
+        setUart(false);
+        setShowPopupUart(false);
+        closeModalUart();
     }
 
-    toggleUart = () =>{
-        this.setState({uart: !this.state.uart, showPopupUart: false});
-        localStorage.setItem('uart', !this.state.uart);
+    const toggleUart = () =>{
+        setUart(!uart);
+        setShowPopupUart(false);
     }
 
-    activateModalSp1 = () =>{
-        this.setState({sp: true, showPopupSp1: false});
-        localStorage.setItem('sp1', !this.state.sp)
-        this.closeModalUart();
+    const activateModalSp1 = () =>{
+        setSpi(true);
+        setShowPopupSpi(false);
+        closeModalSp1();
     }
     
-    deactivateModalSp1 = () => {
-        this.setState({sp: false, showPopupSp1: false});
-        this.closeModalUart();
+    const deactivateModalSp1 = () => {
+        setSpi(false);
+        setShowPopupSpi(false);
+        closeModalSp1();
     }
 
-    toggleSp1 = () =>{
-        this.setState({sp: !this.state.sp, showPopupSp1: false});
-        localStorage.setItem('sp1', !this.state.sp);
+    const toggleSp1 = () =>{
+        setSpi(!spi);
+        setShowPopupSpi(false);
     }
 
-    activateModalI2c = () =>{
-        this.setState({i2c: true, showPopupI2c: false});
-        localStorage.setItem('i2c', !this.state.i2c);
-        this.closeModalUart();
-    }
-    
-    deactivateModalI2c = () => {
-        this.setState({i2c: false, showPopupI2c: false});
-        this.closeModalUart();
-    }
-
-    toggleI2c = () => {
-        this.setState({i2c: !this.state.i2c, showPopupSp1: false});
-        localStorage.setItem('i2c', !this.state.i2c);
-    }
-
-
-    a1CheckedState = () => {
-        this.setState({A1Checked: !this.state.A1Checked});
-        localStorage.setItem("a1-I/O", !this.state.A1Checked);
-    }
-
-    b1CheckedState = () => {
-        this.setState({B1Checked: !this.state.B1Checked});
-        localStorage.setItem("b1-I/O", !this.state.B1Checked);
-    }
-
-    b2CheckedState = () => {
-        this.setState({B2Checked: !this.state.B2Checked});
-        localStorage.setItem("b2-I/O", !this.state.B2Checked);
-    }
-
-
-    d1CheckedState = () => {
-        this.setState({D1Checked: !this.state.D1Checked});
-        localStorage.setItem("d1-I/O", !this.state.D1Checked);
-    }
-
-    d2CheckedState = async () => {
-        this.setState({D2Checked: !this.state.D2Checked});
-        localStorage.setItem("d2-I/O", !this.state.D2Checked);
+    const activateModalI2c = () =>{
+        setI2c(true);
+        setShowPopupI2c(false);
+        closeModalI2c();
     }
     
-    onSpiCircleClick = () => {
-        if((this.state.C1 && this.state.C2) && (this.state.D1 && this.state.D2)){
-            this.setState({showPopupSp1: !this.state.showPopupSp1});
+    const deactivateModalI2c = () => {
+        setI2c(false);
+        setShowPopupI2c(false);
+        closeModalI2c();
+    }
+
+    const toggleI2c = () => {
+        setI2c(!i2c);
+        setShowPopupI2c(false);
+    }
+
+
+    const a1CheckedState = () => {
+        setA1Checked(!a1Checked);
+    }
+
+    const b1CheckedState = () => {
+        setB1Checked(!b1Checked);
+    }
+
+    const b2CheckedState = () => {
+        setB2Checked(!b2Checked);
+    }
+
+
+    const d1CheckedState = () => {
+        setD1Checked(!d1Checked);
+    }
+
+    const d2CheckedState = () => {
+        setD2Checked(!d2Checked);
+    }
+    
+    const onSpiCircleClick = () => {
+        if((C1 && C2) && (D1 && D2)){
+            setShowPopupSpi(!showPopupSpi);
         }
     }
     
-    onUartCircleChange = () => {
-        if(this.state.B1 && this.state.B2){
-            this.setState({showPopupUart: !this.state.showPopupUart});
+    const onUartCircleChange = () => {
+        if(B1 && B2){
+            setShowPopupUart(!showPopupUart);
         }
     }
 
-    onI2cCircleChange = () => {
-        if(this.state.D1 && this.state.D2){
-            this.setState({showPopupI2c: !this.state.showPopupI2c});
+    const onI2cCircleChange = () => {
+        if(D1 && D2){
+            setShowPopupI2c(!showPopupI2c);
         }
     }
 
-    render() {
-        let buttonModal;
-        let buttonModalSp1;
-        let buttonModalI2c;
-        let UART;
-        let SP1;
-        let I2c;
+    let buttonModal;
+    let buttonModalSp1;
+    let buttonModalI2c;
+    let UART;
+    let SP1;
+    let I2c;
 
-        //UART
-        if(this.state.showPopupUart){
-            buttonModal = (<PopupMenu 
-                open={this.state.showPopupUart}
-                close={this.closeModalUart}
-                click={this.closeModalUart}
-                onActivation={this.activateModalUart}
-                onDeactivation={this.deactivateModalUart}
-                    >
-                  <span> Activating the UART protocol will enable the B port</span>
+    //UART
+    if(showPopupUart){
+        buttonModal = (<PopupMenu 
+            open={showPopupUart}
+            close={closeModalUart}
+            click={closeModalUart}
+            onActivation={activateModalUart}
+            onDeactivation={deactivateModalUart}
+                >
+                <span> Activating the UART protocol will enable the B port</span>
+                <br/>
+                <span>  Continue? </span>
+                <br/>
+        </PopupMenu>)
+    }
+    if(uart){
+        UART = (<div className="activatedUart">
+                    <span> UART protocol activated</span>
                     <br/>
-                    <span>  Continue? </span>
-                    <br/>
-            </PopupMenu>)
-        }
-        if(JSON.parse(localStorage.getItem('uart'))){
-            UART = (<div className="activatedUart">
-                       <span> UART protocol activated</span>
-                       <br/>
-                        <input type="checkbox" className="circle arrangecircle" 
-                        onChange={this.toggleUart}
-                        checked={JSON.parse(localStorage.getItem('uart'))} />
-                        {this.state.showPopupUart ? buttonModal : null}
-                </div>)
-        }else{
-            UART = (<div className="left-lower">
-            <div className={(this.state.B1 && this.state.B2) +"text-circle I2c uart"}>
-                <label>
-                    UART
-                        <input type="checkbox" className="i2cinput extra-uart circle" 
-                        disabled={!this.state.B1 && !this.state.B2} 
-                        onChange={this.onUartCircleChange}
-                        checked={this.state.uart} />
-                        {this.state.showPopupUart ? buttonModal : null}
-                </label>  
-            </div>
-            <label className={this.state.B1 +"input upper-label-input"}>
-                                <span>
-                                B1</span>
+                    <input type="checkbox" className="circle arrangecircle" 
+                    onChange={toggleUart}
+                    checked={uart} />
+                    {showPopupUart ? buttonModal : null}
+            </div>)
+    }else{
+        UART = (<div className="left-lower">
+        <div className={(B1 && B2) +"text-circle I2c uart"}>
+            <label>
+                UART
+                    <input type="checkbox" className="i2cinput extra-uart circle" 
+                    disabled={!B1 && !B2} 
+                    onChange={onUartCircleChange}
+                    checked={uart} />
+                    {showPopupUart ? buttonModal : null}
+            </label>  
+        </div>
+        <label className={B1 +"input upper-label-input"}>
+                            <span>
+                            B1</span>
+        <SwitchButton 
+        disabled={!B1}
+        checked={b1Checked}
+        onChange={b1CheckedState}
+        />
+        </label>
+        <label className={B2 + "input lower-label-input input-bd"}>
+            <span> B2</span>
             <SwitchButton 
-            disabled={!this.state.B1}
-            checked={JSON.parse(localStorage.getItem('b1-I/O')) || this.state.B1Checked}
-            onChange={this.b1CheckedState}
+            disabled={!B2}
+            checked={b2Checked}
+            onChange={b2CheckedState}
             />
-            </label>
-            <label className={this.state.B2 + "input lower-label-input input-bd"}>
-               <span> B2</span>
-                <SwitchButton 
-                disabled={!this.state.B2}
-                checked={JSON.parse(localStorage.getItem('b2-I/O')) || this.state.B2Checked}
-                onChange={this.b2CheckedState}
-                />
-            </label>
-        </div>)}
+        </label>
+    </div>)}
 
-        //I2C
-        if(this.state.showPopupI2c){
-            buttonModalI2c = (<PopupMenu 
-                open={this.state.showPopupI2c}
-                close={this.closeModalI2c}
-                click={this.closeModalI2c}
-                onActivation={this.activateModalI2c}
-                onDeactivation={this.deactivateModalI2c}
-                    >
-                   <span>Activating the I2C protocol will enable the D port</span>
-                    <br/>
-                  <span> Continue? </span>
-                    <br/>
-            </PopupMenu>)
-        }
+    //I2C
+    if(showPopupI2c){
+        buttonModalI2c = (<PopupMenu 
+            open={showPopupI2c}
+            close={closeModalI2c}
+            click={closeModalI2c}
+            onActivation={activateModalI2c}
+            onDeactivation={deactivateModalI2c}
+                >
+                <span>Activating the I2C protocol will enable the D port</span>
+                <br/>
+                <span> Continue? </span>
+                <br/>
+        </PopupMenu>)
+    }
 
 
-        if(JSON.parse(localStorage.getItem('i2c'))){
-            I2c = (<div className="right-lower exLower">
-            <div className="activatedI2c">
-            <span> I2C protocol activated</span>
-             <input type="checkbox" className="circle arrangecircleI2c"  
-             onChange={this.toggleI2c}
-             checked={JSON.parse(localStorage.getItem('i2c'))} />
-             {this.state.showPopupI2c ? buttonModalI2c : null}
-            </div>
-        </div>)
-        }
+    if(i2c){
+        I2c = (<div className="right-lower exLower">
+        <div className="activatedI2c">
+        <span> I2C protocol activated</span>
+            <input type="checkbox" className="circle arrangecircleI2c"  
+            onChange={toggleI2c}
+            checked={i2c} />
+            {showPopupI2c ? buttonModalI2c : null}
+        </div>
+    </div>)
+    }
 
-        // SP1 popup
-        if(this.state.showPopupSp1){
-            buttonModalSp1 = (<PopupMenu 
-                open={this.state.showPopupSp1}
-                close={this.closeModalSp1}
-                click={this.closeModalSp1}
-                onActivation={this.activateModalSp1}
-                onDeactivation={this.deactivateModalSp1}
-                    >
-                  <span>  Activating the SPI protocol will enable the C and D ports </span>
-                    <br/>
-                    <span>  Continue?</span>
-                    <br/>
-            </PopupMenu>)
-        }
-        //sp1 activated
-        if(JSON.parse(localStorage.getItem('sp1'))){
-            SP1 = (<div className="activatedSp1">
-            <span> SPI protocol activated</span>
-            <br/>
-             <input type="checkbox" 
-             className="circle arrangecircleSp1" 
-             checked={JSON.parse(localStorage.getItem('sp1'))}
-             onChange={this.toggleSp1} />
-             {this.state.showPopupSp1 ? buttonModalSp1 : null}
-     </div>)
-        }else{
-            //sp1 code
-            SP1 = (<>
-            <div className={((this.state.C1 && this.state.C2)) +"text-circle sp"}>
-            <label>SPI</label>
+    // SP1 popup
+    if(showPopupSpi){
+        buttonModalSp1 = (<PopupMenu 
+            open={showPopupSpi}
+            close={closeModalSp1}
+            click={closeModalSp1}
+            onActivation={activateModalSp1}
+            onDeactivation={deactivateModalSp1}
+                >
+                <span>  Activating the SPI protocol will enable the C and D ports </span>
+                <br/>
+                <span>  Continue?</span>
+                <br/>
+        </PopupMenu>)
+    }
+    //sp1 activated
+    if(spi){
+        SP1 = (<div className="activatedSp1">
+        <span> SPI protocol activated</span>
+        <br/>
             <input type="checkbox" 
-            className={(this.state.D1 && this.state.D2) +"text-circle i2cinput circle spicircle" }
-            disabled={!(this.state.D2 || this.state.D1) && !(this.state.C1 && this.state.C2)}
-            onChange={this.onSpiCircleClick}
-            checked={this.state.sp} />
-            {this.state.showPopupSp1 ? buttonModalSp1 : null}
+            className="circle arrangecircleSp1" 
+            checked={spi}
+            onChange={toggleSp1} />
+            {showPopupSpi ? buttonModalSp1 : null}
+    </div>)
+    }else{
+        //sp1 code
+        SP1 = (<>
+        <div className={((C1 && C2)) +"text-circle sp"}>
+        <label>SPI</label>
+        <input type="checkbox" 
+        className={(D1 && D2) +"text-circle i2cinput circle spicircle" }
+        disabled={!(D2 || D1) && !(C1 && C2)}
+        onChange={onSpiCircleClick}
+        checked={spi} />
+        {showPopupSpi ? buttonModalSp1 : null}
+    </div>
+    <div className="right-upper">
+        <label className={C1 + "input upper-label-input c"}>
+                            <span>
+                            C1</span>
+            <SwitchButton 
+            disabled={!C1}
+            checked={c1Checked}
+            onChange={() => true}
+            />
+        </label>
+        <label className={C2 + "input lower-label-input input-bd"}>
+            <span> C2</span>
+            <SwitchButton 
+            disabled={!C2}
+            checked={c2Checked}
+            onChange={() => true}
+            />
+        </label>
+    </div>
+    
+        {JSON.parse(localStorage.getItem('i2c')) ? I2c : ( <>
+        <div className="right-lower">
+        <div className={(D1 && D2)+"text-circle I2c"}>
+            <label>
+                I2C
+                <input type="checkbox" className="i2cinput circle" 
+                onChange={onI2cCircleChange}
+                    disabled={!D1 && !D2} 
+                checked={i2c} />
+                {showPopupI2c ? buttonModalI2c : null}
+            </label> 
         </div>
-        <div className="right-upper">
-            <label className={this.state.C1 + "input upper-label-input c"}>
-                                <span>
-                                C1</span>
-                <SwitchButton 
-                disabled={!this.state.C1}
-                checked={this.state.C1Checked}
-                onChange={() => true}
-                />
-            </label>
-            <label className={this.state.C2 + "input lower-label-input input-bd"}>
-               <span> C2</span>
-                <SwitchButton 
-                disabled={!this.state.C2}
-                checked={this.state.C2Checked}
-                onChange={() => true}
-                />
-            </label>
+        <label className={D1 + "input upper-label-input lower"}>
+                            <span>
+                            D1</span>
+            <SwitchButton
+            disabled={!D1}
+            checked={d1Checked}
+            onChange={d1CheckedState}
+            />
+        </label>
+        <label className={D2 + "input lower-label-input input-left input-D2"}>
+            <span> D2 </span>
+            <SwitchButton className="ADSwitch"
+            disabled={!D2}
+            checked={d2Checked}
+            onChange={d2CheckedState}
+            />
+        </label>
         </div>
+        </>)}
         
-           {JSON.parse(localStorage.getItem('i2c')) ? I2c : ( <>
-            <div className="right-lower">
-           <div className={(this.state.D1 && this.state.D2)+"text-circle I2c"}>
-                <label>
-                    I2C
-                    <input type="checkbox" className="i2cinput circle" 
-                    onChange={this.onI2cCircleChange}
-                        disabled={!this.state.D1 && !this.state.D2} 
-                    checked={this.state.i2c} />
-                    {this.state.showPopupI2c ? buttonModalI2c : null}
-                </label> 
-            </div>
-            <label className={this.state.D1 + "input upper-label-input lower"}>
-                                <span>
-                                D1</span>
-                <SwitchButton
-                disabled={!this.state.D1}
-                checked={JSON.parse(localStorage.getItem('d1-I/O')) || this.state.D1Checked}
-                onChange={this.d1CheckedState}
-                />
-            </label>
-            <label className={this.state.D2 + "input lower-label-input input-left"}>
-               <span> D2 </span>
-                <SwitchButton className="ADSwitch"
-                disabled={!this.state.D2}
-                checked={JSON.parse(localStorage.getItem('d2-I/O')) || this.state.D2Checked}
-                onChange={this.d2CheckedState}
-                />
-            </label>
-            </div>
-            </>)}
-            
-        </>)
-        }
+    </>)
+    }
 
         return (
             <>
@@ -345,21 +326,21 @@ class InputOutput extends Component {
                 <div className="flex">
                     <div className="left">
                         <div className="left-upper">
-                            <label className={this.state.A1 + "input upper-label-input"}>
+                            <label className={A1 + "input upper-label-input"}>
                             <br/>
                                 <span>
                                     A1
                                 </span>
                                 <SwitchButton  
-                                disabled={!this.state.A1}
-                                checked={JSON.parse(localStorage.getItem('a1-I/O')) || this.state.A1Checked}
-                                onChange={this.a1CheckedState}/>
+                                disabled={!A1}
+                                checked={a1Checked}
+                                onChange={a1CheckedState}/>
                             </label>
-                            <label className={this.state.A2 +"input lower-label-input input-left"}>
+                            <label className={A2 +"input lower-label-input input-left"}>
                                <span> A2 </span>
                                 <SwitchButton
-                                disabled={!this.state.A2}
-                                checked={JSON.parse(localStorage.getItem('a2-I/O')) || this.state.A2Checked}
+                                disabled={!A2}
+                                checked={a2Checked}
                                 onChange={() => true}
                                 />
                             </label>
@@ -368,7 +349,7 @@ class InputOutput extends Component {
                             {UART}
                             
                     </div>
-                    <div className={JSON.parse(localStorage.getItem('sp1')) === true ? '' : 'right'}>
+                    <div className={spi === true ? '' : 'right'}>
                         {SP1}
                     </div>
                 </div>
@@ -378,6 +359,6 @@ class InputOutput extends Component {
             </>
         );
     }
-}
+
 
 export default InputOutput;

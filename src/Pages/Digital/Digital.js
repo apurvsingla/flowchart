@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import DigitalAnalog from '../../Components/DigitalAnalog/DigitalAnalog';
+import DigitalAnalog from '../../Components/DigitalAnalog/DigitalAnalog.js';
 class Digital extends Component {
     render() {
         return (
