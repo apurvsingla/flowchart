@@ -3,7 +3,7 @@ import { useState } from "react";
 export const useLocalStorage = (key, initialValue) => {
   const [storedValue, setStoredValue] = useState(() => {
     try {
-      const item = window.localStorage.getItem(key);
+      const item = window.sessionStorage.getItem(key);
       return item ? JSON.parse(item) : initialValue;
     } catch (err) {
       console.error(err);
@@ -16,7 +16,7 @@ export const useLocalStorage = (key, initialValue) => {
       const valueToStore =
         value instanceof Function ? value(storedValue) : value;
       setStoredValue(valueToStore);
-      window.localStorage.setItem(key, JSON.stringify(valueToStore));
+      window.sessionStorage.setItem(key, JSON.stringify(valueToStore));
     } catch (err) {
       console.error(err);
     }

@@ -43,7 +43,7 @@ class DigitalContainer extends Component {
                         <label>UART</label>
                         <input type="checkbox" className="circle" 
                         onChange={this.toggleUart}
-                        checked={JSON.parse(localStorage.getItem('uart'))} />
+                        checked={JSON.parse(sessionStorage.getItem('uart'))} />
                     </Left>
                     <div className="right-uart">
                         <p className="left-uart-para">B1 &rarr; TX</p>

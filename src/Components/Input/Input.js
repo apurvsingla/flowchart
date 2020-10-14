@@ -7,14 +7,14 @@ import './Input.styles.scss';
 import useLocalStorage from '../LocalStorage/LocalStorage';
 
 function InputOutput(){
-    const A1 = JSON.parse(localStorage.getItem('A1'));
-    const A2 = JSON.parse(localStorage.getItem('A2'));
-    const B1 = JSON.parse(localStorage.getItem('B1'));
-    const B2 = JSON.parse(localStorage.getItem('B2'));
-    const C1 = JSON.parse(localStorage.getItem('C1'));
-    const C2 = JSON.parse(localStorage.getItem('C2'));
-    const D1 = JSON.parse(localStorage.getItem('D1'));
-    const D2 = JSON.parse(localStorage.getItem('D2'));
+    const A1 = JSON.parse(sessionStorage.getItem('A1'));
+    const A2 = JSON.parse(sessionStorage.getItem('A2'));
+    const B1 = JSON.parse(sessionStorage.getItem('B1'));
+    const B2 = JSON.parse(sessionStorage.getItem('B2'));
+    const C1 = JSON.parse(sessionStorage.getItem('C1'));
+    const C2 = JSON.parse(sessionStorage.getItem('C2'));
+    const D1 = JSON.parse(sessionStorage.getItem('D1'));
+    const D2 = JSON.parse(sessionStorage.getItem('D2'));
     
     const [a1Checked, setA1Checked] = useLocalStorage('a1-I/O', false);
     const [a2Checked] = useLocalStorage('a2-I/O', false);
@@ -287,7 +287,7 @@ function InputOutput(){
         </label>
     </div>
     
-        {JSON.parse(localStorage.getItem('i2c')) ? I2c : ( <>
+        {JSON.parse(sessionStorage.getItem('i2c')) ? I2c : ( <>
         <div className="right-lower">
         <div className={(D1 && D2)+"text-circle I2c"}>
             <label>

@@ -6,17 +6,17 @@ import './DigitalAnalog.styles.scss';
 import useLocalStorage from '../LocalStorage/LocalStorage';
 
 function DigitalAnalog() {
-    const A1DIGI = JSON.parse(localStorage.getItem('A1'));
-    const A2DIGI = JSON.parse(localStorage.getItem('A2'));
-    const B1DIGI = JSON.parse(localStorage.getItem('B1'));
-    const B2DIGI = JSON.parse(localStorage.getItem('B2'));
-    const C1DIGI = JSON.parse(localStorage.getItem('C1'));
-    const C2DIGI = JSON.parse(localStorage.getItem('C2'));
-    const D1DIGI = JSON.parse(localStorage.getItem('D1'));
-    const D2DIGI = JSON.parse(localStorage.getItem('D2'));
-    const SPI = JSON.parse(localStorage.getItem('spi'));
-    const I2C = JSON.parse(localStorage.getItem('i2c'));
-    const UART = JSON.parse(localStorage.getItem('uart'));
+    const A1DIGI = JSON.parse(sessionStorage.getItem('A1'));
+    const A2DIGI = JSON.parse(sessionStorage.getItem('A2'));
+    const B1DIGI = JSON.parse(sessionStorage.getItem('B1'));
+    const B2DIGI = JSON.parse(sessionStorage.getItem('B2'));
+    const C1DIGI = JSON.parse(sessionStorage.getItem('C1'));
+    const C2DIGI = JSON.parse(sessionStorage.getItem('C2'));
+    const D1DIGI = JSON.parse(sessionStorage.getItem('D1'));
+    const D2DIGI = JSON.parse(sessionStorage.getItem('D2'));
+    const SPI = JSON.parse(sessionStorage.getItem('spi'));
+    const I2C = JSON.parse(sessionStorage.getItem('i2c'));
+    const UART = JSON.parse(sessionStorage.getItem('uart'));
 
     const [a1Digi, setA1Digi] = useLocalStorage('A1DIGI', false);
     const [b1Digi, setB1Digi] = useLocalStorage('B1DIGI', false);
@@ -27,12 +27,12 @@ function DigitalAnalog() {
     const [c2Digi, setC2Digi] = useLocalStorage('C2DIGI', false);
     const [d2Digi, setD2Digi] = useLocalStorage('D2DIGI', false);
 
-    const [pwmA1, setPwmA1] = useLocalStorage('PWMA1', (JSON.parse(localStorage.getItem('a1-I/O')) && JSON.parse(localStorage.getItem('A1'))));
-    const [pwmD1, setPwmD1] = useLocalStorage('PWMD1', (JSON.parse(localStorage.getItem('d1-I/O')) && JSON.parse(localStorage.getItem('D1'))));
+    const [pwmA1, setPwmA1] = useLocalStorage('PWMA1', (JSON.parse(sessionStorage.getItem('a1-I/O')) && JSON.parse(sessionStorage.getItem('A1'))));
+    const [pwmD1, setPwmD1] = useLocalStorage('PWMD1', (JSON.parse(sessionStorage.getItem('d1-I/O')) && JSON.parse(sessionStorage.getItem('D1'))));
    
    
     const toggleA1 = () => {
-        if(JSON.parse(localStorage.getItem('a1-I/O')) === true){
+        if(JSON.parse(sessionStorage.getItem('a1-I/O')) === true){
             setPwmA1(!pwmA1);
         }
         setA1Digi(!a1Digi);
@@ -54,7 +54,7 @@ function DigitalAnalog() {
     }
 
     const toggleD1 = () => {
-        if(JSON.parse(localStorage.getItem('d1-I/O')) === true){
+        if(JSON.parse(sessionStorage.getItem('d1-I/O')) === true){
             setPwmD1(!pwmD1);
         }
         setD1Digi(!d1Digi);
@@ -83,7 +83,7 @@ function DigitalAnalog() {
                     disable1={!A1DIGI || false} 
                     disable2={!A2DIGI|| false}
                     togglePWM1={togglePWMA1}
-                    checkedPWM1={JSON.parse(localStorage.getItem('a1-I/O')) ? pwmA1 : null}
+                    checkedPWM1={JSON.parse(sessionStorage.getItem('a1-I/O')) ? pwmA1 : null}
                     isTrue={true}
                         />
                         
@@ -104,7 +104,7 @@ function DigitalAnalog() {
                         <label>SPI</label>
                         <input type="checkbox" className="circle spicircle" 
                         onChange={() => true}
-                        checked={JSON.parse(localStorage.getItem('spi')) || false} />
+                        checked={JSON.parse(sessionStorage.getItem('spi')) || false} />
                     </div>
                     <div className="right-spi">
                         <p>C1 &rarr; MOSI</p>
@@ -129,7 +129,7 @@ function DigitalAnalog() {
                     <label>I2C</label>
                     <input type="checkbox" className="circle" 
                     onChange={() => true}
-                    checked={JSON.parse(localStorage.getItem('i2c')) || false} />
+                    checked={JSON.parse(sessionStorage.getItem('i2c')) || false} />
                 </Left>
                 <div className="right-ic2">
                     <p>D1 &rarr; SCL</p>
@@ -144,7 +144,7 @@ function DigitalAnalog() {
                     changeToggle2={toggleD2}
                     togglePWM1={() => true}
                     isTrue={true}
-                    checkedPWM1={JSON.parse(localStorage.getItem('d1-I/O')) ? pwmD1 : null}
+                    checkedPWM1={JSON.parse(sessionStorage.getItem('d1-I/O')) ? pwmD1 : null}
                     />
                             }
                     </>}
