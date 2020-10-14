@@ -243,6 +243,12 @@
     }
 }
 
+@media (max-width: 768px){
+    .right{
+        padding: 0rem 0.65rem 0.8rem 5.5rem;
+    }
+}
+
 @media (max-width: 724px) {
     .left{
         position: relative;
@@ -256,6 +262,9 @@
 @media (max-width: 600px){
     .right-lower, .right-upper {
         padding: 6px 11px;
+    }
+    .right{
+        padding: 0rem 0.74rem 0.8rem 5.5rem;
     }
 }
 

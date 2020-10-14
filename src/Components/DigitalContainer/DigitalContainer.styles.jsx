@@ -11,7 +11,7 @@ export const BorderDiv = styled.div`
     color: #311b92;
     font-weight: 600;
     width: 178px;
-
+    box-sizing: border-box;
     @media (max-width: 776px){
         padding: 12px;
     }
@@ -45,14 +45,15 @@ export const DigitalContainerForComponent = styled.div`
     -color: #311b92;
     background: linear-gradient(to right,  #311b92 45%,white 45%);
     color: white;
-    width: 168px;
+    width: 178px;
     display: flex;
     justify-content: space-around;
     padding: 14%;
     padding-top: 7%;
     padding-bottom: 7%;
-    margin-top:17px;
+    margin-top:18px;
     bottom: 10px;
+    box-sizing: border-box;
     
    @media (max-width: 776px){
         padding: 12px;

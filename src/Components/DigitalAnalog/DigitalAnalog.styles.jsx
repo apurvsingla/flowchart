@@ -68,15 +68,15 @@ export const DigitalContainerForComponent = styled.div`
     border-radius: 20px;
     background: linear-gradient(to right,  #311b92 40%,white 40%);
     color: white;
-    width: 168px;
+    width: 178px;
     display: flex;
     justify-content: space-around;
     padding: 14%;
     padding-top: 7%;
     padding-bottom: 7%;
-    margin-top: 17px;
+    margin-top: 18px;
     bottom: 10px;    
-    
+    box-sizing: border-box;
     @media (max-width: 776px){
         padding: 12px;
     }
