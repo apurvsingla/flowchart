@@ -2,11 +2,12 @@ import styled from 'styled-components';
 
 export const BorderDiv = styled.div`
     border: 1px solid #311b92;
-    padding: 10%;
+    padding: 9%;
     padding-top: 7%;
     padding-bottom: 7%;
     border-radius: 20px;
     margin: 5%;
+    margin-bottom: 10%
     background-color: white;
     color: #311b92;
     font-weight: 600;
