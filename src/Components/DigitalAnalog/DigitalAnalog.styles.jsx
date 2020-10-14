@@ -88,7 +88,7 @@ export const DigitalContainerForComponent = styled.div`
     @media (max-width: 464px){
         transform: scale(0.9);
         position: relative;
-        top: 43px;
+        top: 30px;
     }
     @media (max-width: 359px){
         width: 173px;
