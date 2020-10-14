@@ -37,6 +37,7 @@ export const LeftButton = styled.button`
     margin-top: 5%;
     height: 40px;
     padding: 5px;
+    margin-left: 1%;
     padding-right: 40px;
     padding-left: 40px;
     border-radius: 25px;
@@ -59,6 +60,7 @@ export const LeftButton = styled.button`
 export const RightButton = styled.button`
     margin-top: 5%;
     height: 40px;
+    margin-right: 1%;
     padding: 5px;
     padding-right: 40px;
     padding-left: 40px;

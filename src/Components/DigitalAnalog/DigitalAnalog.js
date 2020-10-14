@@ -21,17 +21,21 @@ function DigitalAnalog() {
     const [a1Digi, setA1Digi] = useLocalStorage('A1DIGI', false);
     const [b1Digi, setB1Digi] = useLocalStorage('B1DIGI', false);
     const [c1Digi, setC1Digi] = useLocalStorage('C1DIGI', false);
+    const [d1Digi, setD1Digi] = useLocalStorage('D1DIGI', false);
     const [a2Digi, setA2Digi] = useLocalStorage('A2DIGI', false);
     const [b2Digi, setB2Digi] = useLocalStorage('B2DIGI', false);
     const [c2Digi, setC2Digi] = useLocalStorage('C2DIGI', false);
     const [d2Digi, setD2Digi] = useLocalStorage('D2DIGI', false);
 
-    const [pwmA1, setPwmA1] = useLocalStorage('PWMA1', false);
-    const [pwmD1, setPwmD1] = useLocalStorage('PWMD1', false);
+    const [pwmA1, setPwmA1] = useLocalStorage('PWMA1', JSON.parse(localStorage.getItem('a1-I/O')) || false);
+    const [pwmD1, setPwmD1] = useLocalStorage('PWMD1', JSON.parse(localStorage.getItem('d1-I/O')));
    
    
     const toggleA1 = () => {
-        setA1Digi(false);
+        if(JSON.parse(localStorage.getItem('a1-I/O')) === true){
+            setPwmA1(!pwmA1);
+        }
+        setA1Digi(!a1Digi);
     }
     const toggleA2 = () => {
         setA2Digi(!a2Digi);
@@ -48,6 +52,13 @@ function DigitalAnalog() {
     const toggleC2 = () => {
         setC2Digi(!c2Digi);
     }
+
+    const toggleD1 = () => {
+        if(JSON.parse(localStorage.getItem('d1-I/O')) === true){
+            setPwmD1(!pwmD1);
+        }
+        setD1Digi(!d1Digi);
+    }
     const toggleD2 = () => {
         setD2Digi(!d2Digi);
     }
@@ -56,9 +67,9 @@ function DigitalAnalog() {
             setPwmA1(!pwmA1);
         }
     }
-    const togglePWMD1 = () => {
-        setPwmD1(!pwmD1);
-    }
+    // const togglePWMD1 = () => {
+    //     setPwmD1(!pwmD1);
+    // }
     
     return (<>
         <Main>
@@ -66,13 +77,13 @@ function DigitalAnalog() {
                 <Container>
                     <DigitalContainer text="A1" text1="A2"
                     changeToggle1={toggleA1}
-                    checked={false}
+                    checked={a1Digi}
                     checked1={a2Digi}
                     changeToggle2={toggleA2}
                     disable1={!A1DIGI || false} 
                     disable2={!A2DIGI|| false}
                     togglePWM1={togglePWMA1}
-                    checkedPWM1={JSON.parse(localStorage.getItem('a1-I/O')) ? true: false}
+                    checkedPWM1={JSON.parse(localStorage.getItem('a1-I/O')) ? pwmA1 : null}
                     isTrue={true}
                         />
                         
@@ -127,13 +138,13 @@ function DigitalAnalog() {
             </DigitalContainerForComponent>: <DigitalContainer text="D1" text1="D2" 
                     disable1={!D1DIGI} 
                     disable2={!D2DIGI}
-                    changeToggle1={() => true}
-                    checked={false}
+                    changeToggle1={toggleD1}
+                    checked={d1Digi}
                     checked1={d2Digi}
                     changeToggle2={toggleD2}
-                    togglePWM1={togglePWMD1}
+                    togglePWM1={() => true}
                     isTrue={true}
-                    checkedPWM1={JSON.parse(localStorage.getItem('d1-I/O')) ? true: false}
+                    checkedPWM1={JSON.parse(localStorage.getItem('d1-I/O')) ? pwmD1 : null}
                     />
                             }
                     </>}

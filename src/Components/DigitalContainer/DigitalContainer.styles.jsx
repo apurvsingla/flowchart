@@ -24,7 +24,7 @@ export const BorderDiv = styled.div`
         padding: auto;
         transform: scale(0.9);
         position: relative;
-        top: 50px;
+        top: 40px;
     }
     @media (max-width: 359px){
         width: 173px;
@@ -51,7 +51,7 @@ export const DigitalContainerForComponent = styled.div`
     padding: 14%;
     padding-top: 7%;
     padding-bottom: 7%;
-    margin-top:20px;
+    margin-top:18px;
     bottom: 10px;
     
    @media (max-width: 776px){
@@ -63,10 +63,9 @@ export const DigitalContainerForComponent = styled.div`
         transform: scale(0.95);
     }
     @media (max-width: 464px){
-        padding: auto;
         transform: scale(0.9);
         position: relative;
-        top: 50px;
+        top: 43px;
     }
     @media (max-width: 359px){
         width: 173px;
@@ -82,6 +81,12 @@ export const Left = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
+    right: 8px;
+
+    @media (max-width: 776px){
+        right: 0;
+    }
 `;
 
 export const Big = styled.div`

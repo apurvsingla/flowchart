@@ -40,7 +40,8 @@
 
 .right-uart{
     position: relative;
-    top: 5px;
+    top: 1px;
+    left: 12px;
     color: #311b92;
     box-sizing: border-box;
     padding: 5px;
@@ -64,6 +65,12 @@
 .falseinput-text{
     position: relative;
     top: 1px;
+}
+
+@media (max-width: 766px){
+    .right-uart{
+        left: 8px;
+    }
 }
 
 

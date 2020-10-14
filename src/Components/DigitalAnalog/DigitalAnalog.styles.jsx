@@ -14,6 +14,12 @@ export const Main = styled.div`
             bottom: 100px;
         }
     }
+
+    @media (max-width: 464px){
+        @media (max-height: 600px){
+            bottom: 120px;
+        }
+    }
 `;
 
 export const InnerDiv = styled.div`
@@ -68,9 +74,8 @@ export const DigitalContainerForComponent = styled.div`
     padding: 14%;
     padding-top: 7%;
     padding-bottom: 7%;
-    margin-top:20px;
-    bottom: 10px;
-    
+    margin-top: 18px;
+    bottom: 10px;    
     
     @media (max-width: 776px){
         padding: 12px;
@@ -81,10 +86,9 @@ export const DigitalContainerForComponent = styled.div`
         transform: scale(0.95);
     }
     @media (max-width: 464px){
-        padding: auto;
         transform: scale(0.9);
         position: relative;
-        top: 50px;
+        top: 43px;
     }
     @media (max-width: 359px){
         width: 173px;
@@ -100,6 +104,12 @@ export const DigitalContainerForComponent = styled.div`
 export const Left = styled.div`
     display: flex;
     flex-direction: column;
+    position: relative;
+    right: 8px;
+
+    @media (max-width: 776px){
+        right: 0;
+    }
 `;
 
 

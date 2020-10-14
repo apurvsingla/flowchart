@@ -51,9 +51,11 @@
 
 }
 
-// @media (max-width: 400px) {
-//   .popChildren{
-//     font-size: 11px;
-//   }
-// } 
+@media (min-width: 768px) {
+  @media (min-height: 750px){
+    .popup-content {
+      transform: scale(2) !important;
+    }
+  }
+} 
 
