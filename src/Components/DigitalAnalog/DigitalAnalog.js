@@ -27,8 +27,8 @@ function DigitalAnalog() {
     const [c2Digi, setC2Digi] = useLocalStorage('C2DIGI', false);
     const [d2Digi, setD2Digi] = useLocalStorage('D2DIGI', false);
 
-    const [pwmA1, setPwmA1] = useLocalStorage('PWMA1', JSON.parse(localStorage.getItem('a1-I/O')) || false);
-    const [pwmD1, setPwmD1] = useLocalStorage('PWMD1', JSON.parse(localStorage.getItem('d1-I/O')));
+    const [pwmA1, setPwmA1] = useLocalStorage('PWMA1', (JSON.parse(localStorage.getItem('a1-I/O')) && JSON.parse(localStorage.getItem('A1'))));
+    const [pwmD1, setPwmD1] = useLocalStorage('PWMD1', (JSON.parse(localStorage.getItem('d1-I/O')) && JSON.parse(localStorage.getItem('D1'))));
    
    
     const toggleA1 = () => {

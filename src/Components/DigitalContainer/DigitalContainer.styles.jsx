@@ -51,7 +51,7 @@ export const DigitalContainerForComponent = styled.div`
     padding: 14%;
     padding-top: 7%;
     padding-bottom: 7%;
-    margin-top:18px;
+    margin-top:17px;
     bottom: 10px;
     
    @media (max-width: 776px){
@@ -65,7 +65,7 @@ export const DigitalContainerForComponent = styled.div`
     @media (max-width: 464px){
         transform: scale(0.9);
         position: relative;
-        top: 30px;
+        top: 32px;
     }
     @media (max-width: 359px){
         width: 173px;
