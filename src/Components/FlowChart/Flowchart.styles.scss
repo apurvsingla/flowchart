@@ -1,0 +1,20 @@
+.left-flowchart{
+    display: inline-block;
+    width: 8.5rem;
+    img{
+        margin-bottom: 12%;
+        width: 100%;
+    }
+}
+
+
+.main-flowchart{
+    display: flex;
+    padding: 1rem;
+}
+
+.right-flowchart{
+    margin-left: 10%;
+    display: inline-block;
+    width: 80%;
+}
