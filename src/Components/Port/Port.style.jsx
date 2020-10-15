@@ -7,6 +7,7 @@ export const MainContainer = styled.div`
     position: relative;
     @media (max-width: 768px) {
         left: 2%;
+        transform: scale(0.95);
     }
     @media (max-width: 624px) {
         transform: scale(0.9);
