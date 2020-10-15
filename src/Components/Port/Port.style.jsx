@@ -5,13 +5,15 @@ export const MainContainer = styled.div`
     justify-content: center;
     align-items: center;
     position: relative;
-    @media (max-width: 768px) {
+    @media (max-width: 800px){
+        transform: scale(0.96);
         left: 2%;
-        transform: scale(0.95);
-    }
+    }   
+    @media (max-width: 700px){
+        left: 0;
+    }  
     @media (max-width: 624px) {
         transform: scale(0.9);
-        left: 0;
     }
     @media (max-width: 584px) {
         transform: scale(0.8);
@@ -28,7 +30,7 @@ export const MainContainer = styled.div`
     }  
     @media (max-width: 320px){
         transform: scale(0.5);
-    }     
+    }    
     @media (min-height: 900px){
         transform: scale(1);
         top: 150px;

@@ -19,7 +19,7 @@ export const MainInputComponent = styled.div`
         top: 150px;
     } 
     @media (max-height: 670px){
-        @media (max-height: 400px){
+        @media (max-height: 412px){
             transform: scale(0.7);
             bottom: 50px;
         }  
