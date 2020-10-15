@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import BottomContainer from '../BottomContainer/BottomContainer';
 import Draggable from 'react-draggable';
 import {useLocalStorage} from '../LocalStorage/LocalStorage';
@@ -43,29 +43,29 @@ function Flowchart() {
             <div className="right-flowchart">
                 {img ? ( <Draggable>
                 <img src={process.env.PUBLIC_URL + '/images/flowcharts/learn_flow_start.png'}  
-                alt="logo" width="150px"
+                alt="logo" width="120px"
                 />
                 </Draggable>) : null}
                 {img2 ? (<Draggable> 
                 <img src={process.env.PUBLIC_URL + '/images/flowcharts/learn_flow_if.png'}  
-                alt="logo" width="150px"
+                alt="logo" width="120px"
                 /></Draggable>) : null}
                 {img3 ? (<Draggable> 
                 <img src={process.env.PUBLIC_URL + '/images/flowcharts/learn_flow_wait.png'}  
-                alt="logo" width="150px"
+                alt="logo" width="120px"
                 /></Draggable>) : null}
                 {img4 ? ( <Draggable>
                 <img src={process.env.PUBLIC_URL + '/images/flowcharts/learn_flow_loop.png'}  
-                alt="logo" width="150px"
+                alt="logo" width="120px"
                 />
                 </Draggable>) : null}
                 {img5 ? (<Draggable>
                 <img src={process.env.PUBLIC_URL + '/images/flowcharts/learn_flow_output.png'}  
-                alt="logo" width="150px"
+                alt="logo" width="120px"
                 /></Draggable>) : null}
                 {img6 ? ( <Draggable>
                 <img src={process.env.PUBLIC_URL + '/images/flowcharts/learn_flow_end-repeat.png'}  
-                alt="logo" width="150px"
+                alt="logo" width="120px"
                 />
                 </Draggable>) : null}
             </div>
