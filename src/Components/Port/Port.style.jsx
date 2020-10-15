@@ -5,8 +5,12 @@ export const MainContainer = styled.div`
     justify-content: center;
     align-items: center;
     position: relative;
+    @media (max-width: 768px) {
+        left: 2%;
+    }
     @media (max-width: 624px) {
         transform: scale(0.9);
+        left: 0;
     }
     @media (max-width: 584px) {
         transform: scale(0.8);

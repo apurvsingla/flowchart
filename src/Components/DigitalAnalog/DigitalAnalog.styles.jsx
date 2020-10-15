@@ -27,7 +27,7 @@ export const InnerDiv = styled.div`
     width: 60%;
     height: 300px;
     justify-content: space-around;
-    transform: scale(1.3);
+    transform: scale(1.25);
     position: relative;
     left: 0;
     @media (max-width: 400px){
