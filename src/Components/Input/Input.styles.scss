@@ -10,16 +10,15 @@
 
 .right{
     border: 1px solid #311b92;
-    padding: 0rem 0.67rem 0.8rem 5.5rem;
+    padding: 0rem 0.64rem 0.8rem 5.5rem;
     margin-left: 4%;
-    max-height: 157px;
+    max-height: 169px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     border-radius: 20px;
-    position: relative;
-    top: 12px;
+   
     background-color: #311b92;
 }
 
@@ -115,7 +114,7 @@
 .right-lower, .right-upper {
     position: relative;
     top: -8px;
-    padding: 11px 10px 11px 11px;
+    padding: 15px 10px 13px 11px;
     text-align: center;
     border-radius: 15px;
 }
@@ -235,8 +234,7 @@
 .exLower{
     background-color: white;
     color:#311b92;
-    padding: 15px 13px 15px 8px;
-    padding: 1rem 0.6rem 0.9rem 0.7rem;
+    padding: 1rem 0.6rem 1.2rem 0.7rem;
 
     .arrangecircleI2c{
         margin-left: 42%;
@@ -259,26 +257,7 @@
     }
 }
 
-@media (max-width: 600px){
-    .right-lower, .right-upper {
-        padding: 6px 11px;
-    }
-    .right{
-        padding: 0rem 0.74rem 0.8rem 5.5rem;
-    }
-}
-
-@media (max-width: 598px){
-    .right-lower, .right-upper {
-        padding: 11px 12px;
-    }
-}
-
 @media (max-width: 575px) {
-    .exLower{
-        padding: 1px 13px 8px 8px;
-    }
-
     .flex{
         transform: scale(1.2);
     }
@@ -287,6 +266,19 @@
         right: 90px;
     }
 } 
+
+@media (max-width: 555px){
+    .right-lower, .right-upper{
+        padding: 14px 12px;
+    }
+    .right{
+        padding: 0rem 0.75rem 0.8rem 5.5rem;
+    }
+    .exLower{
+        padding: 1rem 0.8rem 1.2rem 0.7rem;
+    }
+}
+
 @media (max-width: 400px) {
     .flex{
         transform: scale(1);

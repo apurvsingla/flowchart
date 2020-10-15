@@ -27,7 +27,13 @@ export const MainContainer = styled.div`
     @media (min-height: 900px){
         transform: scale(1);
         top: 150px;
-    }   
+    }  
+    @media (max-height: 670px){
+        @media (max-height: 400px){
+            transform: scale(0.7);
+            bottom: 50px;
+        }  
+    } 
 `;
 
 export const ButtonBackground = styled.div`

@@ -27,19 +27,27 @@ export const InnerDiv = styled.div`
     width: 60%;
     height: 300px;
     justify-content: space-around;
-
+    transform: scale(1.3);
+    position: relative;
+    left: 0;
     @media (max-width: 400px){
         width: 100%;
-        position: relative;
-        right: 10px;
+        left: 8.5%;
     }
-    @media (max-width: 359px){
-        right: 25px;
+    @media (max-width: 320px){
+        left: 0;
+    }
+    @media (max-height: 670px){
+        @media (max-height: 400px){
+            transform: scale(1.1);
+            bottom: 50px;
+        }  
     }
 `;
 
 export const Container = styled.div`
     display: flex;
+    width: auto;
     flex-direction: column;
     justify-content: center;
     transform: scale(1.2);
