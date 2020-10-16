@@ -79,7 +79,8 @@ const Header = () => {
                 <img src={process.env.PUBLIC_URL + '/images/flowcharts/upload.png'}
                   alt="pic" width="70"/>
             </Grid>  
-            {show ? (<ListComponent show={() => settingsButton()}/>) : (<Grid item xs={1.5} className={classes.sideImages} onClick={() => settingsButton()}>
+            {show ? (<ListComponent show={() => settingsButton()}/>) : (<Grid item xs={1.5} className={classes.sideImages} 
+            onClick={() => settingsButton()}>
                 <img src={process.env.PUBLIC_URL + '/images/flowcharts/settings.png'} 
                  alt="pic" width="70"/>
             </Grid>)}
