@@ -15,9 +15,10 @@ export default function BottomContainer(props) {
                 <br/>
             <p>Description line 2</p>
         </Container>
-        <RightButton onClick={() => history.push(props.to)}>
+        {history.location.pathname === '/flowchart' ? null : (<RightButton onClick={() => history.push(props.to)}>
              Next
-        </RightButton>
+        </RightButton>)}
+        
         </Main>
     )
 }
