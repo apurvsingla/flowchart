@@ -170,7 +170,7 @@ function InputOutput(){
     }else{
         UART = (<div className="left-lower">
         <div className={(B1 && B2) +"text-circle I2c uart"}>
-            <label>
+            <label className={(B1 || false) + "-span"}>
                 UART
                     <input type="checkbox" className="i2cinput extra-uart circle" 
                     disabled={!B1 && !B2} 
@@ -180,7 +180,7 @@ function InputOutput(){
             </label>  
         </div>
         <label className={B1 +"input upper-label-input"}>
-                            <span>
+                            <span className={(B1 || false) + "-span"}>
                             B1</span>
         <SwitchButton 
         disabled={!B1}
@@ -189,7 +189,7 @@ function InputOutput(){
         />
         </label>
         <label className={B2 + "input lower-label-input input-bd"}>
-            <span> B2</span>
+            <span className={(B2 || false) + "-span"}> B2</span>
             <SwitchButton 
             disabled={!B2}
             checked={b2Checked}
@@ -257,7 +257,7 @@ function InputOutput(){
         //sp1 code
         SP1 = (<>
         <div className={((C1 && C2)) +"text-circle sp"}>
-        <label>SPI</label>
+        <label className={((C1 && C2 && D1 && D2) || false) + "-span"}>SPI</label>
         <input type="checkbox" 
         className={(D1 && D2) +"text-circle i2cinput circle spicircle" }
         disabled={!(D2 || D1) && !(C1 && C2)}
@@ -267,7 +267,7 @@ function InputOutput(){
     </div>
     <div className="right-upper">
         <label className={C1 + "input upper-label-input c"}>
-                            <span>
+                            <span className={(C1 || false) + "-span"}>
                             C1</span>
             <SwitchButton 
             disabled={!C1}
@@ -277,7 +277,7 @@ function InputOutput(){
             />
         </label>
         <label className={C2 + "input lower-label-input input-bd"}>
-            <span> C2</span>
+            <span className={(C2 || false) + "-span"}> C2</span>
             <SwitchButton 
             disabled={!C2}
             removeButton={true}
@@ -290,7 +290,7 @@ function InputOutput(){
         {JSON.parse(sessionStorage.getItem('i2c')) ? I2c : ( <>
         <div className="right-lower">
         <div className={(D1 && D2)+"text-circle I2c"}>
-            <label>
+            <label className={(D1 || false) + "-span"}>
                 I2C
                 <input type="checkbox" className="i2cinput circle" 
                 onChange={onI2cCircleChange}
@@ -300,7 +300,7 @@ function InputOutput(){
             </label> 
         </div>
         <label className={D1 + "input upper-label-input lower"}>
-                            <span>
+                            <span className={(D1 || false) + "-span"}>
                             D1</span>
             <SwitchButton
             disabled={!D1}
@@ -309,7 +309,7 @@ function InputOutput(){
             />
         </label>
         <label className={D2 + "input lower-label-input input-left input-D2"}>
-            <span> D2 </span>
+            <span className={(D2 || false) + "-span"}> D2 </span>
             <SwitchButton className="ADSwitch"
             disabled={!D2}
             checked={d2Checked}
@@ -329,7 +329,7 @@ function InputOutput(){
                     <div className="left">
                         <div className="left-upper">
                             <label className={A1 + "input upper-label-input"}>
-                                <span>
+                                <span className={(A1 || false) + "-span"}>
                                     A1
                                 </span>
                                 <SwitchButton  
@@ -338,7 +338,7 @@ function InputOutput(){
                                 onChange={a1CheckedState}/>
                             </label>
                             <label className={A2 +"input lower-label-input input-left"}>
-                               <span> A2 </span>
+                               <span className={(A2 || false) + "-span"}> A2 </span>
                                 <SwitchButton
                                 disabled={!A2}
                                 checked={a2Checked}

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {withRouter, useHistory} from 'react-router-dom';
 
 import Grid from '@material-ui/core/Grid';
@@ -12,6 +12,7 @@ HeaderWifiImage,
 HeaderBackButton, 
 // HeaderHelp,
 } from './Header.style';
+import ListComponent from '../ListComponent/ListComponent';
 
 import './Header.scss';
 
@@ -29,7 +30,6 @@ const useStyles = makeStyles({
     leftPadding: {
         position: 'relative',
         top: '12px',
-        marginLeft: '20px'
     }
   });
 
@@ -41,6 +41,12 @@ const Header = () => {
         }
     }
     const classes = useStyles();
+
+    const [show, setShow] = useState(false);
+    const settingsButton = () => {
+        setShow(!show);
+    }
+
     const history = useHistory();
     const back = () => {
         if(history.location.pathname === '/'){
@@ -55,7 +61,7 @@ const Header = () => {
     }
     if(history.location.pathname === '/flowchart'){
         return (<>
-        <Grid container sm={12} spacing={0} wrap='nowrap' >
+        <Grid container wrap='nowrap' >
             <Grid item xs={6} sm={8} lg={8} />
             <Grid item xs={1.5} className={classes.root}>
                 <img src={process.env.PUBLIC_URL + '/images/header/bluetooth_inactive.png'}  
@@ -73,16 +79,15 @@ const Header = () => {
                 <img src={process.env.PUBLIC_URL + '/images/flowcharts/upload.png'}
                   alt="pic" width="70"/>
             </Grid>  
-            <Grid item xs={1.5} className={classes.sideImages}>
+            {show ? (<ListComponent show={() => settingsButton()}/>) : (<Grid item xs={1.5} className={classes.sideImages} onClick={() => settingsButton()}>
                 <img src={process.env.PUBLIC_URL + '/images/flowcharts/settings.png'} 
                  alt="pic" width="70"/>
-            </Grid>
+            </Grid>)}
         </Grid>
         </>);  
     }else{
         return (
             <HeaderContainer>
-                
                 <HeaderBackButton 
                 onClick={back}
                 src={process.env.PUBLIC_URL + '/images/login/login_button_back.png'} 
