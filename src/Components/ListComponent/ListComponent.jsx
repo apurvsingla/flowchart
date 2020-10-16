@@ -1,25 +1,12 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
-
+import {Para, TitleDiv} from './ListComponent.style';
 const useStyles = makeStyles({
     sideImages: {
         position: 'relative',
         top: '12px'
     },
-    abs: {
-        position: 'absolute',
-        top: '6.5rem',
-        right: '17%',
-        textAlign: 'right'
-    },
-    mar: {
-        marginBottom: '35px',
-        color: '#311b92',
-        fontWeight: 'bold',
-        letterSpacing: '0.05rem',
-        fontSize: '1.2re'
-    }
   });
 
 const ListComponent = (props) => {
@@ -56,24 +43,24 @@ const ListComponent = (props) => {
                 <img src={process.env.PUBLIC_URL + '/images/flowcharts/learn_button_update.png'} 
                     alt="pic" width="70" onClick={props.show}/>
             </Grid>
-            <div className={classes.abs}>
-                <p className={classes.mar}>Remote</p>
+            <TitleDiv>
+                <Para>Remote</Para>
                
-                <br/>
-                <p className={classes.mar}>Music Player</p>
+              
+                <Para>Music Player</Para>
                 
-                <br/>
-                <p className={classes.mar}>Image Processing</p>
+              
+                <Para>Image Processing</Para>
                 
-                <br/>
-                <p className={classes.mar}>Plotter</p>
+            
+                <Para>Plotter</Para>
                
-                <br/>
-                <p className={classes.mar}>Speech</p>
-                <br/>
+              
+                <Para>Speech</Para>
+              
                 
-                <p className={classes.mar}>Update</p>
-            </div>
+                <Para>Update</Para>
+            </TitleDiv>
         </Grid>
     );
 }

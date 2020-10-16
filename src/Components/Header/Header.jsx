@@ -26,11 +26,6 @@ const useStyles = makeStyles({
         position: 'relative',
         top: '12px'
     },
-
-    leftPadding: {
-        position: 'relative',
-        top: '12px',
-    }
   });
 
 const Header = () => {
@@ -61,13 +56,13 @@ const Header = () => {
     }
     if(history.location.pathname === '/flowchart'){
         return (<>
-        <Grid container wrap='nowrap' >
+        <Grid container wrap='nowrap'>
             <Grid item xs={6} sm={8} lg={8} />
             <Grid item xs={1.5} className={classes.root}>
                 <img src={process.env.PUBLIC_URL + '/images/header/bluetooth_inactive.png'}  
                 alt="logo" width="55"/>
             </Grid> 
-            <Grid item xs={1.5} className={classes.leftPadding}>
+            <Grid item xs={1.5} className={classes.sideImages}>
                 <img src={process.env.PUBLIC_URL + '/images/flowcharts/convert.png'} 
                  alt="pic" width="70" spacing={2}/>
             </Grid>  
