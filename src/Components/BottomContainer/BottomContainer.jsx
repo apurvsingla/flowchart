@@ -5,7 +5,10 @@ import { useHistory } from 'react-router-dom';
 
 export default function BottomContainer(props) {
     const history = useHistory();
-    return (
+    return (<>
+    {history.location.pathname === '/flowchart' ? (<LeftButton style={{position: 'fixed', bottom: '0'}} onClick={() => history.push(props.prev)}>
+                Prev
+            </LeftButton>) : (
         <Main>
             <LeftButton onClick={() => history.push(props.prev)}>
                 Prev
@@ -19,6 +22,7 @@ export default function BottomContainer(props) {
              Next
         </RightButton>)}
         
-        </Main>
+        </Main>)}
+        </>
     )
 }
