@@ -1,7 +1,7 @@
 import React from 'react';
 import BottomContainer from '../BottomContainer/BottomContainer';
 import {useLocalStorage} from '../LocalStorage/LocalStorage';
-import Dots from '../Dots/Dots';
+import Dots from '../FlowchartDots/Dots';
 import './Flowchart.styles.scss';
 
 function Flowchart() {
@@ -12,35 +12,41 @@ function Flowchart() {
     const [img5, setImg5] = useLocalStorage('img5',[]);
     const [img6, setImg6] = useLocalStorage('img6',[]);
 
+    const [line] = React.useState(true);
+
+    // const lineHandler = () => {
+    //     setLine(!line);
+    // }
+
     const saveState = (x,y) => {
         setImg({x,y})
     }
 
-    const saveState2 = (id, x,y) => {
+    const saveState2 = (id) => {
         const index = img2.findIndex(e => e.id === id.id);
         img2[index] = id;
         setImg2(img2)
     }
 
-    const saveState3 = (id, x,y) => {
+    const saveState3 = (id) => {
         const index = img3.findIndex(e => e.id === id.id);
         img3[index] = id;
         setImg3(img3)
     }
 
-    const saveState4 = (id, x,y) => {
+    const saveState4 = (id) => {
         const index = img4.findIndex(e => e.id === id.id);
         img4[index] = id;
         setImg4(img4)
     }
 
-    const saveState5 = (id, x,y) => {
+    const saveState5 = (id) => {
         const index = img5.findIndex(e => e.id === id.id);
         img5[index] = id;
         setImg5(img5)
     }
 
-    const saveState6 = (id, x,y) => {
+    const saveState6 = (id) => {
         const index = img6.findIndex(e => e.id === id.id);
         img6[index] = id;
         setImg6(img6)
@@ -62,19 +68,15 @@ function Flowchart() {
         setImg6(img6 => img6.concat({id: Date.now(),defaultPosition: {x: 0, y: 0}}));
     }
 
-    // const drawLine = () => {
-
+    // const onDragPosDel = (id) => {
+    //     console.log(true);
+    //     console.log(img2)
+    //     if(img2.defaultPosition === {x: 19, y: 37}){
+    //         const index = img2.findIndex(e => e.id === id.id);
+    //         img2.slice(index, 1);
+    //         setImg2(img2);
+    //     }
     // }
-
-    const onDragPos = (id) => {
-        console.log('yeah');
-
-        if(img2.defaultPosition === {x: 18, y: 21}){
-            const index = img2.findIndex(e => e.id === id.id);
-            img.slice(index, 1);
-            setImg2(img2);
-        }
-    }
 
     return (<>
         <div className="main-flowchart">
@@ -100,7 +102,27 @@ function Flowchart() {
                 onClick={() => onImage6Concat()}
                 />
             </div>
+
             <div className="right-flowchart">
+                
+                {line ? (
+                // <svg width="100%" height="100%">
+                //     <path d={'M ' + 2*(img.x.defaultPosition.x) + ',' + 
+                //     2*(img.x.defaultPosition.y) 
+                //     + ' C ' + (img.x.defaultPosition.x) + ',' + 
+                //     (img.x.defaultPosition.y) + ' ' + 
+                //     (img2[0].defaultPosition.x)  + ',' +
+                //     (img2[0].defaultPosition.y) + 
+                //     ' ' + (img2[0].defaultPosition.x) + ','+ 
+                //     (img2[0].defaultPosition.y)
+                //     }
+                //     style={{stroke: "black", strokeWidth:"3", 
+                //     fill: "none"
+                //      }}/>
+                // </svg>
+               <span></span>
+                ) : null} 
+
                 {<Dots
                 defaultPosition={img.x ? img.x.defaultPosition : img.x}
                 onStop={(e, data) => {
@@ -119,7 +141,6 @@ function Flowchart() {
                     top={true}
                     bottom={true}
                     right={true}
-                    onClick={(e, data) => onDragPos({id: img2.id, defaultPosition: { x: data.x, y: data.y } })}
                 />
                  )) : null}
 

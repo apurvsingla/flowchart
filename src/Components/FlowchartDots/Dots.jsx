@@ -1,16 +1,11 @@
 import React from 'react';
 import Draggable from 'react-draggable';
-import Line from 'react-lineto';
 
 const Dots = (props) => {
-    const drawLine = () => {
-        console.log(true);
+    const handleClick = (e) => {
+        console.log(e.target.className);
     }
 
-    const toDrawLine = () => {
-        console.log(true)
-    }
-    drawLine();
     return (
         <Draggable
             defaultPosition={props.defaultPosition}
@@ -26,34 +21,35 @@ const Dots = (props) => {
                 left: '58px', 
                 top: '-9px', 
                 height: '8px', 
-                width: '8px', 
-                borderRadius: '50%', 
-                backgroundColor: 'black'}}>
-                    <Line from={() => drawLine()} to={() => toDrawLine()} /></span>
-                ) : null}
+                width: '10px', 
+                
+                backgroundColor: 'black'}}
+                onMouseOver={(e) => handleClick(e)}
+                >
+                </span>) : null}
 
                 {props.right ? (<span 
                 className="right-dot"
                 style={{position: 'absolute', 
-                right: '-9px',  height: '8px', 
-                width: '8px', borderRadius: '50%', 
-                backgroundColor: 'black', top: '15px'}}>
-                    <Line from={() => drawLine()} to={() => toDrawLine()} />
+                right: '-9px',  height: '10px', 
+                width: '8px', 
+                backgroundColor: 'black', top: '15px'}}
+                onMouseOver={(e) => handleClick(e)}
+                >
                 </span>): null}
 
                 {props.bottom ? (<span 
                 className="bottom-dot" 
                 style={{position: 'absolute', 
                 left: '58px', bottom: '-5px', 
-                height: '8px', width: '8px', 
-                borderRadius: '50%', backgroundColor: 'black'}}>
-                    <Line from={() => drawLine()} to={() => toDrawLine()} />
+                height: '8px', width: '10px', backgroundColor: 'black'}}
+                onMouseOver={(e) => handleClick(e)}
+                >
                 </span>) : null}
 
                 <img src={props.src} 
                 alt="logo" width="120px"
                 />
-
             </div>
         </Draggable>
     );
