@@ -2,6 +2,8 @@ import React from 'react';
 import BottomContainer from '../BottomContainer/BottomContainer';
 import {useLocalStorage} from '../LocalStorage/LocalStorage';
 import Dots from '../FlowchartDots/Dots';
+// import LineTo from 'react-lineto';
+// import CanvasDraw from "react-canvas-draw";
 import './Flowchart.styles.scss';
 
 function Flowchart() {
@@ -11,11 +13,30 @@ function Flowchart() {
     const [img4, setImg4] = useLocalStorage('img4',[]);
     const [img5, setImg5] = useLocalStorage('img5',[]);
     const [img6, setImg6] = useLocalStorage('img6',[]);
+    // const [click, setClick] = React.useState(0);
+    // const [draw, setDraw] = React.useState(false);
 
-    const [line] = React.useState(true);
+    // const [line, setLine] = React.useState(false);
 
     // const lineHandler = () => {
-    //     setLine(!line);
+    //     setClick(click + 1);
+    //     if(click === 1){
+    //         return
+    //     }
+    //     if(click === 2){
+    //         return 
+    //     }
+    //     if(click === 3){
+    //         setClick(1)
+    //     }
+    // }
+
+    // const toLineHandler = (e) => {
+    //     console.log(e.target.className);
+    // }
+
+    // const toggle = () => {
+    //     setDraw(!draw);
     // }
 
     const saveState = (x,y) => {
@@ -101,27 +122,39 @@ function Flowchart() {
                 alt="logo"
                 onClick={() => onImage6Concat()}
                 />
+                {/* <img src="" alt="yeah" onClick={() => lineHandler()} /> */}
             </div>
 
             <div className="right-flowchart">
-                
-                {line ? (
-                // <svg width="100%" height="100%">
-                //     <path d={'M ' + 2*(img.x.defaultPosition.x) + ',' + 
-                //     2*(img.x.defaultPosition.y) 
-                //     + ' C ' + (img.x.defaultPosition.x) + ',' + 
-                //     (img.x.defaultPosition.y) + ' ' + 
-                //     (img2[0].defaultPosition.x)  + ',' +
-                //     (img2[0].defaultPosition.y) + 
-                //     ' ' + (img2[0].defaultPosition.x) + ','+ 
-                //     (img2[0].defaultPosition.y)
-                //     }
-                //     style={{stroke: "black", strokeWidth:"3", 
-                //     fill: "none"
-                //      }}/>
-                // </svg>
+                {/* <svg height={window.innerHeight} width="800" style={{position: "absolute"}}>
+                    <path d="M20,50 L80,40"/>
+                </svg> */}
+                {/* {draw ? ( <CanvasDraw canvasWidth={1100} 
+            canvasHeight={1200} 
+            style={{position: 'absolute'}}
+            // hideInterface='true' 
+            hideGrid='true'
+            saveData='true'
+            brushRadius={2}/>) : null} */}
+            {/* <LineTo from="first-bottom-dot" to="third-top-dot" /> */}
+           
+                {/* {line ? (
+                <svg width="100%" height="100%">
+                    <path d={'M ' + 2*(img.x.defaultPosition.x) + ',' + 
+                    2*(img.x.defaultPosition.y) 
+                    + ' C ' + (img.x.defaultPosition.x) + ',' + 
+                    (img.x.defaultPosition.y) + ' ' + 
+                    (img2[0].defaultPosition.x)  + ',' +
+                    (img2[0].defaultPosition.y) + 
+                    ' ' + (img2[0].defaultPosition.x) + ','+ 
+                    (img2[0].defaultPosition.y)
+                    }
+                    style={{stroke: "black", strokeWidth:"3", 
+                    fill: "none"
+                     }}/>
+                </svg>
                <span></span>
-                ) : null} 
+                ) : null}  */}
 
                 {<Dots
                 defaultPosition={img.x ? img.x.defaultPosition : img.x}
@@ -129,6 +162,7 @@ function Flowchart() {
                     saveState({id: img.id, defaultPosition: { x: data.x, y: data.y }})
                 }}  src={process.env.PUBLIC_URL + '/images/flowcharts/learn_flow_start.png'}
                 bottom={true}
+                properClass="first"
                 />}
 
                 {img2.length>= 1 ? img2.map( img2 => (
@@ -141,12 +175,12 @@ function Flowchart() {
                     top={true}
                     bottom={true}
                     right={true}
+                    properClass="second"
                 />
                  )) : null}
 
                 {img3.length>= 1 ? img3.map( img3 => (
                 <Dots 
-                
                 defaultPosition={img3.defaultPosition}
                 onStop={(e, data) => {
                          saveState3({id: img3.id,  defaultPosition: { x: data.x, y: data.y } });
@@ -154,6 +188,7 @@ function Flowchart() {
                 src={process.env.PUBLIC_URL + '/images/flowcharts/learn_flow_wait.png'}
                 top={true}
                 bottom={true}
+                properClass="third"
                 />
                 )) : null}
 
@@ -167,6 +202,7 @@ function Flowchart() {
                 top={true}
                 bottom={true}
                 right={true}
+                properClass="fourth"
                 />
                 )) : null}
 
@@ -179,6 +215,7 @@ function Flowchart() {
                 src={process.env.PUBLIC_URL + '/images/flowcharts/learn_flow_output.png'}
                 top={true}
                 bottom={true}
+                properClass="fifth"
                 />
                 )) : null}
 
@@ -189,7 +226,9 @@ function Flowchart() {
                          saveState6({id: img6.id,  defaultPosition: { x: data.x, y: data.y } });
                        }}
                 src={process.env.PUBLIC_URL + '/images/flowcharts/learn_flow_end-repeat.png'}
-                top={true} />
+                top={true}
+                properClass="sixth"
+                />
                 )): null}
                 
             </div>
