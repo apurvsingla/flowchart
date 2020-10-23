@@ -1,32 +1,38 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Draggable from 'react-draggable';
 import LineTo from 'react-lineto';
+// import {useLocalStorage} from '../LocalStorage/LocalStorage';
 
 const Dots = (props) => {
-    const [click, setClick] = React.useState(0);
-    const [clas, setClas] = React.useState();
-
-    React.useEffect(() => {
-        console.log(clas ,click);
-    }, [click, clas]);
+    const [click, setClick] = useState(0);
+    const [clas, setClas] = useState(null);
+    const [secondClas, setSecondClas] = useState(null);
+    
+    // React.useEffect(() => {
+    //     handleClick();
+    // }, [clas,click]);
 
     const handleClick = (e) => {
-        console.log(e.target.className);
-        setClick(click + 1);
-        if(click === 1){
-            setClas(e.target.className);
-        }
-        if(click === 2){
-            setClas(e.target.className);
-        }
-        if(click === 3){
+        if(click === 0){
             setClick(1);
             setClas(e.target.className);
+            console.log(click, clas,secondClas, 'yeah')
+        }
+        if(click === 1){
+            setClick(click + 1);
+            setSecondClas(e.target.className);
+            console.log(click, clas, secondClas, 'second')
+        }
+        if(click === 2){
+            setClick(1);
+            setClas(e.target.className);
+            console.log(click,clas,secondClas, 'third')
         }
     }
 
     return (<>
-     <LineTo from={click===1 ? clas : null} to={click===2 ? clas : null} />
+     <LineTo from={click===1 ? JSON.stringify(clas) : JSON.stringify(clas) } to={click===2 ? JSON.stringify(secondClas) : JSON.stringify(secondClas) } />
+     {/* <LineTo from="first-bottom-dot" to="second-top-dot" /> */}
         <Draggable
             defaultPosition={props.defaultPosition}
             onStop={props.onStop}
