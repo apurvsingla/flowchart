@@ -89,19 +89,18 @@ function Flowchart() {
         setImg6(img6 => img6.concat({id: Date.now(),defaultPosition: {x: 0, y: 0}}));
     }
 
-    // const onDragPosDel = (id) => {
-    //     console.log(true);
-    //     console.log(img2)
-    //     if(img2.defaultPosition === {x: 19, y: 37}){
-    //         const index = img2.findIndex(e => e.id === id.id);
-    //         img2.slice(index, 1);
-    //         setImg2(img2);
-    //     }
-    // }
+    const onDragPosDel = (id) => {
+        const index = img2.findIndex(e => e.id === id.id);
+        if(img2[index].defaultPosition.x < '-20'){
+            const newList = img2.slice(index,1);
+            setImg2([...newList]);
+        }
+    }
 
     return (<>
         <div className="main-flowchart">
             <div className="left-flowchart" style={{position:"absolute", top: '8%'}}>
+                {/* {img2.length>1 ? setImg2({}) : null} */}
                 <img src={process.env.PUBLIC_URL + '/images/flowcharts/learn_flow_if.png'}  
                 alt="logo"
                 onClick={() => onImage2Concat()}
@@ -176,6 +175,9 @@ function Flowchart() {
                     bottom={true}
                     right={true}
                     properClass="second"
+                    onClick={(e,data) => {
+                        onDragPosDel({id: img2.id, defaultPosition: {x:data.x, y: data.y}})
+                    }}
                 />
                  )) : null}
 
